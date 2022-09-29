@@ -5,7 +5,7 @@
 package firstassignment.ui;
 
 import firstassignment.model.Create;
-import firstassignment.model.VitalSignHistory;
+import firstassignment.model.EmployeeList;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,10 +17,10 @@ public class CreateJPanel extends javax.swing.JPanel {
     /**
      * Creates new form CreateJPanel
      */
-    VitalSignHistory history;
-    public CreateJPanel(VitalSignHistory history) {
+    EmployeeList empList;
+    public CreateJPanel(EmployeeList eList) {
         initComponents();
-        this.history = history;
+        this.empList = eList;
     }
 
     /**
@@ -293,7 +293,7 @@ public class CreateJPanel extends javax.swing.JPanel {
 //        int pulse = Integer.parseInt(txtGender.getText());
 //        String date = txtAge.getText();
         
-        Create vs = history.addNewVital();
+        Create vs = empList.addNewEmployee();
         vs.setName(name);
         vs.setEmpID(empID);
         vs.setAge(age);

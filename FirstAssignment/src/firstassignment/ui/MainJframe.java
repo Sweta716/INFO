@@ -4,7 +4,7 @@
  */
 package firstassignment.ui;
 
-import firstassignment.model.VitalSignHistory;
+import firstassignment.model.EmployeeList;
 
 /**
  *
@@ -16,11 +16,11 @@ public class MainJframe extends javax.swing.JFrame {
      * Creates new form MainJframe
      */
     
-    VitalSignHistory history;
+    EmployeeList history;
     
     public MainJframe() {
         initComponents();
-        history = new VitalSignHistory();
+        history = new EmployeeList();
     }
 
     /**
