@@ -37,9 +37,9 @@ public class EmployeeList {
 //        this.empList = history;
 //    }
       public CreateEmployee addNewEmployee(){
-        CreateEmployee newVitals = new CreateEmployee();
-        empList.add(newVitals);
-        return newVitals;
+        CreateEmployee createEmployee = new CreateEmployee();
+        empList.add(createEmployee);
+        return createEmployee;
     }
 
     public void deleteEmployee(CreateEmployee vs) {

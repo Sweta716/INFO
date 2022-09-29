@@ -339,8 +339,8 @@ public class ViewJPanel extends javax.swing.JPanel {
             return;
         }
         DefaultTableModel model = (DefaultTableModel) tblEmpDisplay.getModel();
-        CreateEmployee selectedVitals = (CreateEmployee)model.getValueAt(selectedRowIndex, 0);
-        empList.deleteEmployee(selectedVitals);
+        CreateEmployee selectedEmployee = (CreateEmployee)model.getValueAt(selectedRowIndex, 0);
+        empList.deleteEmployee(selectedEmployee);
         JOptionPane.showMessageDialog(this, "Employee deleted");
         populateTable();
     }//GEN-LAST:event_btnDeleteActionPerformed
