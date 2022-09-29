@@ -4,7 +4,7 @@
  */
 package firstassignment.ui;
 
-import firstassignment.model.Create;
+import firstassignment.model.CreateEmployee;
 import firstassignment.model.EmployeeList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -309,7 +309,7 @@ public class ViewJPanel extends javax.swing.JPanel {
             return;
         }
         DefaultTableModel model = (DefaultTableModel) tblEmpDisplay.getModel();
-        Create selectedVitals = (Create)model.getValueAt(selectedRowIndex, 0);
+        CreateEmployee selectedVitals = (CreateEmployee)model.getValueAt(selectedRowIndex, 0);
         
      txtAge.setText(String.valueOf(selectedVitals.getAge()));
      txtEmailID.setText(selectedVitals.getEmailID());
@@ -339,7 +339,7 @@ public class ViewJPanel extends javax.swing.JPanel {
             return;
         }
         DefaultTableModel model = (DefaultTableModel) tblEmpDisplay.getModel();
-        Create selectedVitals = (Create)model.getValueAt(selectedRowIndex, 0);
+        CreateEmployee selectedVitals = (CreateEmployee)model.getValueAt(selectedRowIndex, 0);
         empList.deleteEmployee(selectedVitals);
         JOptionPane.showMessageDialog(this, "Employee deleted");
         populateTable();
@@ -419,7 +419,7 @@ public class ViewJPanel extends javax.swing.JPanel {
     private void populateTable() {
        DefaultTableModel model = (DefaultTableModel) tblEmpDisplay.getModel();
        model.setRowCount(0);
-       for(Create vs : empList.getEmpList()){
+       for(CreateEmployee vs : empList.getEmpList()){
           Object[] row = new Object[10];
           row[0] = vs;
           row[1] = vs.getName();

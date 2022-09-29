@@ -4,7 +4,10 @@
  */
 package firstassignment.model;
 
+import java.awt.Image;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 /**
  *
@@ -12,17 +15,17 @@ import java.util.ArrayList;
  */
 public class EmployeeList {
     
-    private ArrayList<Create> empList;
+    private ArrayList<CreateEmployee> empList;
     public EmployeeList(){
-        this.empList = new ArrayList<Create>();
+        this.empList = new ArrayList<CreateEmployee>();
         
     }
 
-    public ArrayList<Create> getEmpList() {
+    public ArrayList<CreateEmployee> getEmpList() {
         return empList;
     }
 
-    public void setEmpList(ArrayList<Create> empList) {
+    public void setEmpList(ArrayList<CreateEmployee> empList) {
         this.empList = empList;
     }
 
@@ -33,14 +36,23 @@ public class EmployeeList {
 //    public void setHistory(ArrayList<Create> history) {
 //        this.empList = history;
 //    }
-      public Create addNewEmployee(){
-        Create newVitals = new Create();
+      public CreateEmployee addNewEmployee(){
+        CreateEmployee newVitals = new CreateEmployee();
         empList.add(newVitals);
         return newVitals;
     }
 
-    public void deleteEmployee(Create vs) {
+    public void deleteEmployee(CreateEmployee vs) {
         empList.remove(vs);
+    }
+    
+    public ImageIcon empImage(String ImagePath){
+        JLabel label = new JLabel();
+        ImageIcon empImg = new ImageIcon(ImagePath);
+        Image img = empImg.getImage();
+        //Image newImg = img.getScaledInstance(label);
+        ImageIcon image = new ImageIcon(img);
+        return image;
     }
     
 }

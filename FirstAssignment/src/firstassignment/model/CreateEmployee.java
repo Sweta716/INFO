@@ -8,7 +8,7 @@ package firstassignment.model;
  *
  * @author sweta
  */
-public class Create {
+public class CreateEmployee {
     
     private String name;
     private String empID;
