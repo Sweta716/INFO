@@ -16,6 +16,8 @@ import javax.swing.JLabel;
 public class EmployeeList {
     
     private ArrayList<CreateEmployee> empList;
+    private String imgPath;
+
     public EmployeeList(){
         this.empList = new ArrayList<CreateEmployee>();
         
@@ -29,6 +31,13 @@ public class EmployeeList {
         this.empList = empList;
     }
 
+    public String getImgPath() {
+        return imgPath;
+    }
+
+    public void setImgPath(String imgPath) {
+        this.imgPath = imgPath;
+    }
 //    public ArrayList<Create> getHistory() {
 //        return empList;
 //    }

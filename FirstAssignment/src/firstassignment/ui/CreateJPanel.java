@@ -7,8 +7,10 @@ package firstassignment.ui;
 
 import firstassignment.model.CreateEmployee;
 import firstassignment.model.EmployeeList;
+import java.io.File;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
@@ -342,6 +344,19 @@ public class CreateJPanel extends javax.swing.JPanel {
     private void btnPhotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPhotoActionPerformed
         // TODO add your handling code here:
       JFileChooser file = new JFileChooser();
+      file.setCurrentDirectory(new File(System.getProperty("user.home")));
+      FileNameExtensionFilter filter = new FileNameExtensionFilter("*.IMAGES", "jpg","png","jpeg");
+      file.addChoosableFileFilter(filter);
+      int result = file.showSaveDialog(null);
+      if(result == JFileChooser.APPROVE_OPTION){
+          File selected = file.getSelectedFile();
+          String path = selected.getAbsolutePath();
+          empList.setImgPath(path);
+          lblPhoto.setIcon(empList.empImage(path));
+      }
+      else if(result == JFileChooser.CANCEL_OPTION){
+          System.out.println("No File selected");
+      }
     //  file.setCurrentDirectory(dir);
         
     }//GEN-LAST:event_btnPhotoActionPerformed
