@@ -21,6 +21,7 @@ public class MainJframe extends javax.swing.JFrame {
     public MainJframe() {
         initComponents();
         history = new EmployeeList();
+       
     }
 
     /**

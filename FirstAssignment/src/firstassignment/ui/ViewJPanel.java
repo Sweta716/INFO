@@ -181,6 +181,11 @@ public class ViewJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tblEmpDisplay);
 
         btnUpdate.setText("Update Employee");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -309,18 +314,18 @@ public class ViewJPanel extends javax.swing.JPanel {
             return;
         }
         DefaultTableModel model = (DefaultTableModel) tblEmpDisplay.getModel();
-        CreateEmployee selectedVitals = (CreateEmployee)model.getValueAt(selectedRowIndex, 0);
+        CreateEmployee selectedEmp = (CreateEmployee)model.getValueAt(selectedRowIndex, 0);
         
-     txtAge.setText(String.valueOf(selectedVitals.getAge()));
-     txtEmailID.setText(selectedVitals.getEmailID());
-     txtEmpID.setText(selectedVitals.getEmpID());
-     txtGender.setText(selectedVitals.getGender());
-     txtLevel.setText(selectedVitals.getLevel());
-     txtName.setText(selectedVitals.getName());
-     txtPhone.setText(selectedVitals.getPhone());
-     txtPositionTitle.setText(selectedVitals.getPositionTitle());
-     txtStartDate.setText(selectedVitals.getStartDate());
-     txtTeamInfo.setText(selectedVitals.getTeamInfo());
+     txtAge.setText(String.valueOf(selectedEmp.getAge()));
+     txtEmailID.setText(selectedEmp.getEmailID());
+     txtEmpID.setText(selectedEmp.getEmpID());
+     txtGender.setText(selectedEmp.getGender());
+     txtLevel.setText(selectedEmp.getLevel());
+     txtName.setText(selectedEmp.getName());
+     txtPhone.setText(selectedEmp.getPhone());
+     txtPositionTitle.setText(selectedEmp.getPositionTitle());
+     txtStartDate.setText(selectedEmp.getStartDate());
+     txtTeamInfo.setText(selectedEmp.getTeamInfo());
     // txtUploadPhoto.setText(selectedVitals.getPhoto());
      lblPhoto.setIcon(empList.empImage(empList.getImgPath()));
         
@@ -381,6 +386,55 @@ public class ViewJPanel extends javax.swing.JPanel {
     private void txtLevelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLevelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtLevelActionPerformed
+
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        // TODO add your handling code here:
+        //get tbl model
+         int selectedRowIndex = tblEmpDisplay.getSelectedRow();
+      DefaultTableModel tblModel = (DefaultTableModel)tblEmpDisplay.getModel();
+      if(tblEmpDisplay.getSelectedRowCount() ==1){
+          //single row is dselected then update
+            String name = txtName.getText();
+            String empID = txtEmpID.getText();
+            int age = Integer.parseInt(txtAge.getText());
+            //String gender = cmbGender.getSelectedItem().toString();
+            String startDate = txtStartDate.getText();
+            //String level = cmbLevel.getSelectedItem().toString();
+            String teamInfo = txtTeamInfo.getText();
+            String positionTitle = txtPositionTitle.getText();
+            String phone = txtPhone.getText();
+            String emailID = txtEmailID.getText();
+            populateTable();
+          
+          CreateEmployee selectedEmpl = (CreateEmployee)tblModel.getValueAt(selectedRowIndex, 0);
+         // selectedEmpl.setName(name);
+          
+           selectedEmpl.setName(name);
+        selectedEmpl.setEmpID(empID);
+        selectedEmpl.setAge(age);
+        //selectedEmpl.setGender(gender);
+        selectedEmpl.setStartDate(startDate);
+       // selectedEmpl.setLevel(level);
+        selectedEmpl.setTeamInfo(teamInfo);
+        selectedEmpl.setPositionTitle(positionTitle);
+        selectedEmpl.setPhone(phone);
+        selectedEmpl.setEmailID(emailID);
+         populateTable();
+          //set updated value on table row
+          //tblModel.setValueAt(name, tblEmpDisplay.getSelectedRow(), 0);
+          
+          //update msg display
+          JOptionPane.showMessageDialog(this, "Updated...");
+      }
+      else{
+          if(tblEmpDisplay.getRowCount()==0){
+              JOptionPane.showMessageDialog(this, "table is empty...");
+          }else{
+              JOptionPane.showMessageDialog(this, "please select row for update...");
+          }
+      }
+      
+    }//GEN-LAST:event_btnUpdateActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
