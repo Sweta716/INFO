@@ -471,7 +471,7 @@ public class ViewJPanel extends javax.swing.JPanel {
        DefaultTableModel model = (DefaultTableModel) tblEmpDisplay.getModel();
        model.setRowCount(0);
        for(CreateEmployee vs : empList.getEmpList()){
-          Object[] row = new Object[10];
+          Object[] row = new Object[11];
           row[0] = vs;
           row[1] = vs.getName();
           row[2] = vs.getEmpID();
@@ -482,6 +482,7 @@ public class ViewJPanel extends javax.swing.JPanel {
           row[7] = vs.getTeamInfo();
           row[8] = vs.getPositionTitle();
           row[9] = vs.getPhone();
+          row[10] = vs.getEmailID();
   
                                   
           
