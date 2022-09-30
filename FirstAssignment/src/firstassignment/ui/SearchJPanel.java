@@ -20,9 +20,7 @@ public class SearchJPanel extends javax.swing.JPanel {
     EmployeeList empList;
     public SearchJPanel(EmployeeList eList) {
         initComponents();
-        this.empList = eList;
-        
-        
+        this.empList = eList;   
     }
 
     /**
@@ -127,10 +125,13 @@ public class SearchJPanel extends javax.swing.JPanel {
        for (CreateEmployee element : empList.getEmpList()){
          if (element.equals(name)){
              
-               System.out.println(element.getAge());
-               
+               System.out.println(element.getGender());
+                 
          }
+         lblDisplay.setText(element.getEmailID());
+         
        }
+     
           
     }//GEN-LAST:event_btnSearchActionPerformed
       
