@@ -327,7 +327,7 @@ public class ViewJPanel extends javax.swing.JPanel {
      txtStartDate.setText(selectedEmp.getStartDate());
      txtTeamInfo.setText(selectedEmp.getTeamInfo());
     // txtUploadPhoto.setText(selectedVitals.getPhoto());
-     lblPhoto.setIcon(empList.empImage(empList.getImgPath()));
+        lblPhoto.setIcon(empList.empImage(empList.getImgPath()));
         
 //        txtDate.setText(String.valueOf(selectedVitals.getTemperature()));
 //        txtPressure.setText(String.valueOf(selectedVitals.getBloodPressure()));

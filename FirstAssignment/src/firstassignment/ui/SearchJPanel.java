@@ -7,7 +7,6 @@ package firstassignment.ui;
 import firstassignment.model.CreateEmployee;
 import firstassignment.model.EmployeeList;
 
-
 /**
  *
  * @author sweta
@@ -18,9 +17,10 @@ public class SearchJPanel extends javax.swing.JPanel {
      * Creates new form SearchJPanel
      */
     EmployeeList empList;
+
     public SearchJPanel(EmployeeList eList) {
         initComponents();
-        this.empList = eList;   
+        this.empList = eList;
     }
 
     /**
@@ -307,38 +307,39 @@ public class SearchJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_txtNameActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-     String name = txtName.getText();
-     String age = txtEmpID.getText();
-     String empID = txtEmpID.getText();
+        String name = txtName.getText();
+        String age = txtEmpID.getText();
+        String empID = txtEmpID.getText();
         System.out.println(name);
-       for (CreateEmployee element : empList.getEmpList()){
-         if (element.equals(name) || element.equals(age)||element.equals(empID)){
-             
-               System.out.println(element.getGender());
-                 
-         }
-         
-    lblAgeDisplay.setText(String.valueOf(element.getAge()));
+        for (CreateEmployee element : empList.getEmpList()) {
+            if (element.equals(name) || element.equals(age) || element.equals(empID)) {
 
-     lblEmailIDDisaply.setText(element.getEmailID());
+                System.out.println(element.getGender());
 
-     lblEmpIDdisplay.setText(element.getEmpID());
+            }
 
-     lblGenderDisplay.setText(element.getGender());
-     lblLevelDisplay.setText(element.getLevel());
+            lblAgeDisplay.setText(String.valueOf(element.getAge()));
 
-     lblNameDisplay.setText(element.getName());
-     lblPhoneDisplay.setText(element.getPhone());
-   //  lblPhotoDisplay.setText(empList);
-     lblPositionTitleDisplay.setText(element.getPositionTitle());
-     lblStartDateDisaply.setText(element.getStartDate());
-     lblTeamInfoDisplay.setText(element.getTeamInfo());
-        // if(element.equals(name))
-         //lblDisplay.setText(element.getEmailID());
-         
-       }
-     
-          
+            lblEmailIDDisaply.setText(element.getEmailID());
+
+            lblEmpIDdisplay.setText(element.getEmpID());
+
+            lblGenderDisplay.setText(element.getGender());
+            lblLevelDisplay.setText(element.getLevel());
+
+            lblNameDisplay.setText(element.getName());
+            lblPhoneDisplay.setText(element.getPhone());
+            //  lblPhotoDisplay.setText(empList);
+            lblPositionTitleDisplay.setText(element.getPositionTitle());
+            lblStartDateDisaply.setText(element.getStartDate());
+            lblTeamInfoDisplay.setText(element.getTeamInfo());
+            lblPhotoDisplay.setIcon(empList.empImage(empList.getImgPath()));
+            // if(element.equals(name))
+            //lblDisplay.setText(element.getEmailID());
+
+        }
+
+
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void txtEmpIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmpIDActionPerformed
@@ -348,8 +349,7 @@ public class SearchJPanel extends javax.swing.JPanel {
     private void txtAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAgeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAgeActionPerformed
-      
- 
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSearch;

@@ -38,13 +38,7 @@ public class EmployeeList {
     public void setImgPath(String imgPath) {
         this.imgPath = imgPath;
     }
-//    public ArrayList<Create> getHistory() {
-//        return empList;
-//    }
-//
-//    public void setHistory(ArrayList<Create> history) {
-//        this.empList = history;
-//    }
+
       public CreateEmployee addNewEmployee(){
         CreateEmployee createEmployee = new CreateEmployee();
         empList.add(createEmployee);
