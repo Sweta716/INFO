@@ -310,7 +310,7 @@ public class SearchJPanel extends javax.swing.JPanel {
         String name = txtName.getText();
         String age = txtEmpID.getText();
         String empID = txtEmpID.getText();
-        System.out.println(name);
+       
         for (CreateEmployee element : empList.getEmpList()) {
             if (element.equals(name) || element.equals(age) || element.equals(empID)) {
 

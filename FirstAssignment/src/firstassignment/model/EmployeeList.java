@@ -52,8 +52,10 @@ public class EmployeeList {
     public ImageIcon empImage(String ImagePath){
         JLabel label = new JLabel();
         ImageIcon empImg = new ImageIcon(ImagePath);
-        Image img = empImg.getImage();
-        //Image newImg = img.getScaledInstance(label);
+        Image img = empImg.getImage().getScaledInstance(149, 151, Image.SCALE_SMOOTH);
+        
+      // Image newImg = img.getScaledInstance(label);
+        
         ImageIcon image = new ImageIcon(img);
         return image;
     }
