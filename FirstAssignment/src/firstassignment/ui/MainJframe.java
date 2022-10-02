@@ -38,6 +38,7 @@ public class MainJframe extends javax.swing.JFrame {
         btnCreate = new javax.swing.JButton();
         btnView = new javax.swing.JButton();
         btnSearch = new javax.swing.JButton();
+        btnSearchMultiple = new javax.swing.JButton();
         workArea = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -64,6 +65,13 @@ public class MainJframe extends javax.swing.JFrame {
             }
         });
 
+        btnSearchMultiple.setText("Search Multiple");
+        btnSearchMultiple.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchMultipleActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
         controlPanel.setLayout(controlPanelLayout);
         controlPanelLayout.setHorizontalGroup(
@@ -73,7 +81,8 @@ public class MainJframe extends javax.swing.JFrame {
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnCreate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSearchMultiple, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         controlPanelLayout.setVerticalGroup(
@@ -85,7 +94,9 @@ public class MainJframe extends javax.swing.JFrame {
                 .addComponent(btnView)
                 .addGap(18, 18, 18)
                 .addComponent(btnSearch)
-                .addContainerGap(414, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnSearchMultiple)
+                .addContainerGap(374, Short.MAX_VALUE))
         );
 
         splitPane.setLeftComponent(controlPanel);
@@ -136,6 +147,13 @@ public class MainJframe extends javax.swing.JFrame {
         splitPane.setRightComponent(searchPanel); 
     }//GEN-LAST:event_btnSearchActionPerformed
 
+    private void btnSearchMultipleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchMultipleActionPerformed
+        // TODO add your handling code here:
+        SearchMultiplePanel searchMulti = new SearchMultiplePanel(history);
+         splitPane.setRightComponent(searchMulti); 
+         
+    }//GEN-LAST:event_btnSearchMultipleActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -174,6 +192,7 @@ public class MainJframe extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreate;
     private javax.swing.JButton btnSearch;
+    private javax.swing.JButton btnSearchMultiple;
     private javax.swing.JButton btnView;
     private javax.swing.JPanel controlPanel;
     private javax.swing.JSplitPane splitPane;

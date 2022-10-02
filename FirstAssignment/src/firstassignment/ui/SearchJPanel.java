@@ -308,9 +308,9 @@ public class SearchJPanel extends javax.swing.JPanel {
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         String name = txtName.getText();
-        String age = txtEmpID.getText();
+        String age = txtAge.getText();
         String empID = txtEmpID.getText();
-       
+        System.out.println("age"+age);
         for (CreateEmployee element : empList.getEmpList()) {
             if (element.equals(name) || element.equals(age) || element.equals(empID)) {
 

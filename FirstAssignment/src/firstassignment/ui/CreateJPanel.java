@@ -310,7 +310,7 @@ public class CreateJPanel extends javax.swing.JPanel {
 
         //age!=null && !age.isEmpty() && name!=null && !name.isEmpty() && empID!=null && !empID.isEmpty() && gender!=null && !gender.isEmpty() && level!=null && !level.isEmpty() && teamInfo!=null && !teamInfo.isEmpty() && position!=null && !position.isEmpty() && phone!=null && !phone.isEmpty() && emailID!=null && !emailID.isEmpty() && 
        //ageDisplay!=null && !ageDisplay.isEmpty() && 
-        if (name_pattern.matcher(name).matches() && phone_pattern.matcher(phone).matches() && email_pattern.matcher(emailID).matches()){
+      //  if (name_pattern.matcher(name).matches() && phone_pattern.matcher(phone).matches() && email_pattern.matcher(emailID).matches()){
         CreateEmployee vs = empList.addNewEmployee();
         vs.setName(name);
         vs.setEmpID(empID);
@@ -325,10 +325,10 @@ public class CreateJPanel extends javax.swing.JPanel {
  
         
         JOptionPane.showMessageDialog(this, "New Employee Created");
-        }
-        else{
-            JOptionPane.showMessageDialog(this, "Please add the correct field");
-        }
+//        }
+//        else{
+//            JOptionPane.showMessageDialog(this, "Please add the correct field");
+//        }
         txtName.setText("");
         txtEmpID.setText("");
      //   txtGender.setText("");

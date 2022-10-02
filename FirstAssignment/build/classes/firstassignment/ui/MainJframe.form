@@ -56,6 +56,7 @@
                           <Component id="btnCreate" max="32767" attributes="0"/>
                           <Component id="btnView" max="32767" attributes="0"/>
                           <Component id="btnSearch" max="32767" attributes="0"/>
+                          <Component id="btnSearchMultiple" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -70,7 +71,9 @@
                       <Component id="btnView" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnSearch" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="414" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnSearchMultiple" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="374" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -98,6 +101,14 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSearchActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnSearchMultiple">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Search Multiple"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSearchMultipleActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

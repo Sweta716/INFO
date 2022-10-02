@@ -307,7 +307,7 @@ public class ViewJPanel extends javax.swing.JPanel {
 
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
         // TODO add your handling code here:
-        System.out.println("view");
+        
           int selectedRowIndex = tblEmpDisplay.getSelectedRow();
         
         if(selectedRowIndex<0){
@@ -317,9 +317,6 @@ public class ViewJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) tblEmpDisplay.getModel();
         String selectedEmpId = model.
                 getValueAt(selectedRowIndex, 1).toString();
-//        CreateEmployee selectedEmp = (CreateEmployee)model
-//                .getValueAt(selectedRowIndex, 1);
-        
         CreateEmployee tempEmp = null;
         
        for(CreateEmployee emp: this.empList.getEmpList()) {
@@ -336,7 +333,7 @@ public class ViewJPanel extends javax.swing.JPanel {
      txtPositionTitle.setText(tempEmp.getPositionTitle());
      txtStartDate.setText(tempEmp.getStartDate());
      txtTeamInfo.setText(tempEmp.getTeamInfo());
-        lblPhoto.setIcon(empList.empImage(empList.getImgPath()));
+     lblPhoto.setIcon(empList.empImage(empList.getImgPath()));
 
     }//GEN-LAST:event_btnViewActionPerformed
 
@@ -409,13 +406,13 @@ public class ViewJPanel extends javax.swing.JPanel {
           DefaultTableModel tblModel = (DefaultTableModel) tblEmpDisplay.getModel();
          String selectedEmpId = tblModel.
                 getValueAt(selectedRowIndex, 1).toString();
-     // DefaultTableModel tblModel = (DefaultTableModel)tblEmpDisplay.getModel();
+    
       if(tblEmpDisplay.getSelectedRowCount() ==1){
           //single row is dselected then update
             String name = txtName.getText();
             String empID = txtEmpID.getText();
             int age = Integer.parseInt(txtAge.getText());
-            //String gender = cmbGender.getSelectedItem().toString();
+           
             String startDate = txtStartDate.getText();
             //String level = cmbLevel.getSelectedItem().toString();
             String teamInfo = txtTeamInfo.getText();
@@ -424,8 +421,7 @@ public class ViewJPanel extends javax.swing.JPanel {
             String emailID = txtEmailID.getText();
             populateTable();
           
-         // CreateEmployee selectedEmpl = (CreateEmployee)tblModel.getValueAt(selectedRowIndex, 0);
-         // selectedEmpl.setName(name);
+     
            CreateEmployee temp = null;
         for(CreateEmployee tempEmp :empList.getEmpList() ){
             if(tempEmp.getEmpID().equals(selectedEmpId)){
@@ -495,17 +491,7 @@ public class ViewJPanel extends javax.swing.JPanel {
        model.setRowCount(0);
        for(CreateEmployee vs : empList.getEmpList()){
           Object[] row = new Object[10];
-//          row[0] = vs;
-//          row[1] = vs.getName();
-//          row[2] = vs.getEmpID();
-//          row[3] = vs.getAge();
-//          row[4] = vs.getGender();
-//          row[5] = vs.getStartDate();
-//          row[6] = vs.getLevel();
-//          row[7] = vs.getTeamInfo();
-//          row[8] = vs.getPositionTitle();
-//          row[9] = vs.getPhone();
-//          row[10] = vs.getEmailID();
+
 
           row[0] = vs.getName();
           row[1] = vs.getEmpID();
@@ -516,11 +502,7 @@ public class ViewJPanel extends javax.swing.JPanel {
           row[6] = vs.getTeamInfo();
           row[7] = vs.getPositionTitle();
           row[8] = vs.getPhone();
-          row[9] = vs.getEmailID();
-         // row[10] = 
-  
-                                  
-          
+          row[9] = vs.getEmailID();       
           model.addRow(row);
        }
     }
