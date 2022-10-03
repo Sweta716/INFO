@@ -5,6 +5,8 @@
 package firstassignment.ui;
 
 import firstassignment.model.EmployeeList;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -20,8 +22,7 @@ public class MainJframe extends javax.swing.JFrame {
     
     public MainJframe() {
         initComponents();
-        history = new EmployeeList();
-       
+        history = new EmployeeList();   
     }
 
     /**
@@ -41,6 +42,7 @@ public class MainJframe extends javax.swing.JFrame {
         btnSearchMultiple = new javax.swing.JButton();
         workArea = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        lblImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(800, 600));
@@ -112,16 +114,23 @@ public class MainJframe extends javax.swing.JFrame {
         workAreaLayout.setHorizontalGroup(
             workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(workAreaLayout.createSequentialGroup()
-                .addGap(88, 88, 88)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(121, Short.MAX_VALUE))
+                .addGroup(workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(workAreaLayout.createSequentialGroup()
+                        .addGap(91, 91, 91)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(workAreaLayout.createSequentialGroup()
+                        .addGap(117, 117, 117)
+                        .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(209, Short.MAX_VALUE))
         );
         workAreaLayout.setVerticalGroup(
             workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(workAreaLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(363, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(67, 67, 67)
+                .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(215, Short.MAX_VALUE))
         );
 
         splitPane.setRightComponent(workArea);
@@ -208,6 +217,7 @@ public class MainJframe extends javax.swing.JFrame {
     private javax.swing.JButton btnView;
     private javax.swing.JPanel controlPanel;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblImage;
     private javax.swing.JSplitPane splitPane;
     private javax.swing.JPanel workArea;
     // End of variables declaration//GEN-END:variables

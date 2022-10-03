@@ -4,7 +4,6 @@
  */
 package firstassignment.ui;
 
-
 import firstassignment.model.CreateEmployee;
 import firstassignment.model.EmployeeList;
 import java.awt.Image;
@@ -26,22 +25,22 @@ public class CreateJPanel extends javax.swing.JPanel {
      * Creates new form CreateJPanel
      */
     EmployeeList empList;
-    
+
     //regex for employee name
-    private static final String name_regex ="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z])$";
+    private static final String name_regex = "^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z])$";
     private static final Pattern name_pattern = Pattern.compile(name_regex);
-        
+
     //regex for employee email
-    private static final String email_regex =
-            "^[a-zA-Z0-9_+&-]+(?:\\.[a-zA-Z0-9_+&-]+)*" +
-            "@" + "(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+    private static final String email_regex
+            = "^[a-zA-Z0-9_+&-]+(?:\\.[a-zA-Z0-9_+&-]+)*"
+            + "@" + "(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
     private static final Pattern email_pattern = Pattern.compile(email_regex);
-    
-    
+
     // regex for india/us phone number with or without dashes
-    private static final String phone_regex =
-            "^\\D?(\\d{3})\\D?\\D?(\\d{3})\\D?(\\d{4})$";
+    private static final String phone_regex
+            = "^\\D?(\\d{3})\\D?\\D?(\\d{3})\\D?(\\d{4})$";
     private static final Pattern phone_pattern = Pattern.compile(phone_regex);
+
     public CreateJPanel(EmployeeList eList) {
         initComponents();
         this.empList = eList;
@@ -239,20 +238,20 @@ public class CreateJPanel extends javax.swing.JPanel {
                             .addComponent(lblName)
                             .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addComponent(lblEmpID)
                                 .addGap(18, 18, 18)
-                                .addComponent(lblAge)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(lblGender)
-                                    .addComponent(cmbGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(lblAge))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(txtEmpID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(cmbGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblGender))
+                                .addGap(9, 9, 9)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblStartDate)
                             .addComponent(txtStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -263,10 +262,10 @@ public class CreateJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(17, 17, 17)
                         .addComponent(lblPhoto, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(20, 20, 20)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblTeamInfo)
-                    .addComponent(txtTeamInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtTeamInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblTeamInfo))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPositionTitle)
@@ -275,17 +274,17 @@ public class CreateJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPhone)
                     .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtEmailID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblEmailID))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblEmailID)
+                    .addComponent(txtEmailID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUploadPhoto)
                     .addComponent(btnPhoto))
-                .addGap(31, 31, 31)
+                .addGap(29, 29, 29)
                 .addComponent(btnSave)
-                .addGap(37, 37, 37))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -299,71 +298,61 @@ public class CreateJPanel extends javax.swing.JPanel {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
-        try{
+        try {
             String name = txtName.getText();
             String empID = txtEmpID.getText();
             String agedisplay = txtAge.getText();
             int age = 0;
-           
-               age = Integer.parseInt(agedisplay);
-           
-              
-               
-           
-                  
-               
-          
-           
+
+            age = Integer.parseInt(agedisplay);
+
             String gender = cmbGender.getSelectedItem().toString();
             String startDate = txtStartDate.getText();
             SimpleDateFormat date_format = new SimpleDateFormat("MM/dd/yyyy");
             Date date = new Date();
             date = date_format.parse(startDate);
-            
+
             String level = cmbLevel.getSelectedItem().toString();
             String teamInfo = txtTeamInfo.getText();
             String positionTitle = txtPositionTitle.getText();
             String phone = txtPhone.getText();
             String emailID = txtEmailID.getText();
-     
-  
-        //age!=null && !age.isEmpty() && name!=null && !name.isEmpty() && empID!=null && !empID.isEmpty() && gender!=null && !gender.isEmpty() && level!=null && !level.isEmpty() && teamInfo!=null && !teamInfo.isEmpty() && position!=null && !position.isEmpty() && phone!=null && !phone.isEmpty() && emailID!=null && !emailID.isEmpty() && 
-       //ageDisplay!=null && !ageDisplay.isEmpty() && 
-        if (agedisplay!=null && !agedisplay.isEmpty() && name!=null && !name.isEmpty() && empID!=null && !empID.isEmpty() && gender!=null && !gender.isEmpty() && level!=null && !level.isEmpty() && teamInfo!=null && !teamInfo.isEmpty() && positionTitle!=null && !positionTitle.isEmpty() && phone!=null && !phone.isEmpty() && emailID!=null && !emailID.isEmpty() && name_pattern.matcher(name).matches() && phone_pattern.matcher(phone).matches() && email_pattern.matcher(emailID).matches()){
-        CreateEmployee vs = empList.addNewEmployee();
-        vs.setName(name);
-        vs.setEmpID(empID);
-        vs.setAge(age);
-        vs.setGender(gender);
-        vs.setStartDate(date);
-        vs.setLevel(level);
-        vs.setTeamInfo(teamInfo);
-        vs.setPositionTitle(positionTitle);
-        vs.setPhone(phone);
-        vs.setEmailID(emailID);
- 
-        
-        JOptionPane.showMessageDialog(this, "New Employee Created");
-        }
-        else{
-            JOptionPane.showMessageDialog(this, "Please add the correct field");
-        }
-        txtName.setText("");
-        txtEmpID.setText("");
-     //   txtGender.setText("");
-        txtAge.setText("");
-        txtStartDate.setText("");
-       // cmbLevel.setText("");
-        txtTeamInfo.setText("");
-        txtPositionTitle.setText("");
-        txtPhone.setText("");
-        txtEmailID.setText("");
-       // txtUploadPhoto.setText("");
-    }//GEN-LAST:event_btnSaveActionPerformed
-    catch(Exception e){
-       JOptionPane.showMessageDialog(this, "Please add the correct field");
 
-    }
+            //age!=null && !age.isEmpty() && name!=null && !name.isEmpty() && empID!=null && !empID.isEmpty() && gender!=null && !gender.isEmpty() && level!=null && !level.isEmpty() && teamInfo!=null && !teamInfo.isEmpty() && position!=null && !position.isEmpty() && phone!=null && !phone.isEmpty() && emailID!=null && !emailID.isEmpty() && 
+            //ageDisplay!=null && !ageDisplay.isEmpty() && 
+            if (agedisplay != null && !agedisplay.isEmpty() && name != null && !name.isEmpty() && empID != null && !empID.isEmpty() && gender != null && !gender.isEmpty() && level != null && !level.isEmpty() && teamInfo != null && !teamInfo.isEmpty() && positionTitle != null && !positionTitle.isEmpty() && phone != null && !phone.isEmpty() && emailID != null && !emailID.isEmpty() && name_pattern.matcher(name).matches() && phone_pattern.matcher(phone).matches() && email_pattern.matcher(emailID).matches()) {
+                CreateEmployee vs = empList.addNewEmployee();
+                vs.setName(name);
+                vs.setEmpID(empID);
+                vs.setAge(age);
+                vs.setGender(gender);
+                vs.setStartDate(date);
+                vs.setLevel(level);
+                vs.setTeamInfo(teamInfo);
+                vs.setPositionTitle(positionTitle);
+                vs.setPhone(phone);
+                vs.setEmailID(emailID);
+
+                JOptionPane.showMessageDialog(this, "New Employee Created");
+            } else {
+                JOptionPane.showMessageDialog(this, "Please add the correct field");
+            }
+            txtName.setText("");
+            txtEmpID.setText("");
+            //   txtGender.setText("");
+            txtAge.setText("");
+            txtStartDate.setText("");
+            // cmbLevel.setText("");
+            txtTeamInfo.setText("");
+            txtPositionTitle.setText("");
+            txtPhone.setText("");
+            txtEmailID.setText("");
+            // txtUploadPhoto.setText("");
+    }//GEN-LAST:event_btnSaveActionPerformed
+    catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please add the correct field");
+
+        }
     }
     private void txtStartDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtStartDateActionPerformed
         // TODO add your handling code here:
@@ -387,23 +376,22 @@ public class CreateJPanel extends javax.swing.JPanel {
 
     private void btnPhotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPhotoActionPerformed
         // TODO add your handling code here:
-      JFileChooser file = new JFileChooser();
-      file.setCurrentDirectory(new File(System.getProperty("user.home")));
-      FileNameExtensionFilter filter = new FileNameExtensionFilter("*.IMAGES", "jpg","png","jpeg");
-      file.addChoosableFileFilter(filter);
-      int result = file.showSaveDialog(null);
-      if(result == JFileChooser.APPROVE_OPTION){
-          File selected = file.getSelectedFile();
-          String path = selected.getAbsolutePath();
-          empList.setImgPath(path);
-          
-          lblPhoto.setIcon(empList.empImage(path));
-      }
-      else if(result == JFileChooser.CANCEL_OPTION){
-          System.out.println("No File selected");
-      }
-    //  file.setCurrentDirectory(dir);
-        
+        JFileChooser file = new JFileChooser();
+        file.setCurrentDirectory(new File(System.getProperty("user.home")));
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("*.IMAGES", "jpg", "png", "jpeg");
+        file.addChoosableFileFilter(filter);
+        int result = file.showSaveDialog(null);
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File selected = file.getSelectedFile();
+            String path = selected.getAbsolutePath();
+            empList.setImgPath(path);
+
+            lblPhoto.setIcon(empList.empImage(path));
+        } else if (result == JFileChooser.CANCEL_OPTION) {
+            System.out.println("No File selected");
+        }
+        //  file.setCurrentDirectory(dir);
+
     }//GEN-LAST:event_btnPhotoActionPerformed
 
     private void cmbLevelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbLevelActionPerformed
