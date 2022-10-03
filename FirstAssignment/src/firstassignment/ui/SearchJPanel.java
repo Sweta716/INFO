@@ -331,7 +331,7 @@ public class SearchJPanel extends javax.swing.JPanel {
             lblPhoneDisplay.setText(element.getPhone());
             //  lblPhotoDisplay.setText(empList);
             lblPositionTitleDisplay.setText(element.getPositionTitle());
-            lblStartDateDisaply.setText(element.getStartDate());
+            lblStartDateDisaply.setText(String.valueOf(element.getStartDate()));
             lblTeamInfoDisplay.setText(element.getTeamInfo());
             lblPhotoDisplay.setIcon(empList.empImage(empList.getImgPath()));
             // if(element.equals(name))

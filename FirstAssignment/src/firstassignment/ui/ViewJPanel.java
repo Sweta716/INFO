@@ -6,6 +6,11 @@ package firstassignment.ui;
 
 import firstassignment.model.CreateEmployee;
 import firstassignment.model.EmployeeList;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -331,7 +336,7 @@ public class ViewJPanel extends javax.swing.JPanel {
      txtName.setText(tempEmp.getName());
      txtPhone.setText(tempEmp.getPhone());
      txtPositionTitle.setText(tempEmp.getPositionTitle());
-     txtStartDate.setText(tempEmp.getStartDate());
+     txtStartDate.setText(String.valueOf(tempEmp.getStartDate()));
      txtTeamInfo.setText(tempEmp.getTeamInfo());
      lblPhoto.setIcon(empList.empImage(empList.getImgPath()));
 
@@ -414,6 +419,13 @@ public class ViewJPanel extends javax.swing.JPanel {
             int age = Integer.parseInt(txtAge.getText());
            
             String startDate = txtStartDate.getText();
+            SimpleDateFormat date_format = new SimpleDateFormat("MM/dd/yyyy");
+            Date date = new Date();
+             try {
+                 date = date_format.parse(startDate);
+             } catch (ParseException ex) {
+                 Logger.getLogger(ViewJPanel.class.getName()).log(Level.SEVERE, null, ex);
+             }
             //String level = cmbLevel.getSelectedItem().toString();
             String teamInfo = txtTeamInfo.getText();
             String positionTitle = txtPositionTitle.getText();
@@ -432,7 +444,7 @@ public class ViewJPanel extends javax.swing.JPanel {
         temp.setEmpID(empID);
         temp.setAge(age);
         //selectedEmpl.setGender(gender);
-        temp.setStartDate(startDate);
+        temp.setStartDate(date);
        // selectedEmpl.setLevel(level);
         temp.setTeamInfo(teamInfo);
         temp.setPositionTitle(positionTitle);

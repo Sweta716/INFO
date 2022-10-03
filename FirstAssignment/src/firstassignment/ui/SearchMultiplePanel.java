@@ -209,8 +209,9 @@ public class SearchMultiplePanel extends javax.swing.JPanel {
            }
               
         }
-        System.out.println("for ke bahar" );
+    
         populateTable(emp);
+         lblPhoto.setIcon(empList.empImage(empList.getImgPath()));
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void txtEmpIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmpIDActionPerformed

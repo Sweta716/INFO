@@ -9,6 +9,8 @@ import firstassignment.model.CreateEmployee;
 import firstassignment.model.EmployeeList;
 import java.awt.Image;
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.regex.Pattern;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -176,6 +178,11 @@ public class CreateJPanel extends javax.swing.JPanel {
         cmbGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other" }));
 
         cmbLevel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Level1", "Level2", "Level3", "Level4" }));
+        cmbLevel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbLevelActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -292,31 +299,43 @@ public class CreateJPanel extends javax.swing.JPanel {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
-        
+        try{
             String name = txtName.getText();
             String empID = txtEmpID.getText();
+            String agedisplay = txtAge.getText();
+            int age = 0;
            
-                 int age = Integer.parseInt(txtAge.getText());
-                 String ageDisplay = String.valueOf(age);
+               age = Integer.parseInt(agedisplay);
+           
+              
+               
+           
+                  
+               
           
            
             String gender = cmbGender.getSelectedItem().toString();
             String startDate = txtStartDate.getText();
+            SimpleDateFormat date_format = new SimpleDateFormat("MM/dd/yyyy");
+            Date date = new Date();
+            date = date_format.parse(startDate);
+            
             String level = cmbLevel.getSelectedItem().toString();
             String teamInfo = txtTeamInfo.getText();
             String positionTitle = txtPositionTitle.getText();
             String phone = txtPhone.getText();
             String emailID = txtEmailID.getText();
-
+     
+  
         //age!=null && !age.isEmpty() && name!=null && !name.isEmpty() && empID!=null && !empID.isEmpty() && gender!=null && !gender.isEmpty() && level!=null && !level.isEmpty() && teamInfo!=null && !teamInfo.isEmpty() && position!=null && !position.isEmpty() && phone!=null && !phone.isEmpty() && emailID!=null && !emailID.isEmpty() && 
        //ageDisplay!=null && !ageDisplay.isEmpty() && 
-      //  if (name_pattern.matcher(name).matches() && phone_pattern.matcher(phone).matches() && email_pattern.matcher(emailID).matches()){
+        if (agedisplay!=null && !agedisplay.isEmpty() && name!=null && !name.isEmpty() && empID!=null && !empID.isEmpty() && gender!=null && !gender.isEmpty() && level!=null && !level.isEmpty() && teamInfo!=null && !teamInfo.isEmpty() && positionTitle!=null && !positionTitle.isEmpty() && phone!=null && !phone.isEmpty() && emailID!=null && !emailID.isEmpty() && name_pattern.matcher(name).matches() && phone_pattern.matcher(phone).matches() && email_pattern.matcher(emailID).matches()){
         CreateEmployee vs = empList.addNewEmployee();
         vs.setName(name);
         vs.setEmpID(empID);
         vs.setAge(age);
         vs.setGender(gender);
-        vs.setStartDate(startDate);
+        vs.setStartDate(date);
         vs.setLevel(level);
         vs.setTeamInfo(teamInfo);
         vs.setPositionTitle(positionTitle);
@@ -325,10 +344,10 @@ public class CreateJPanel extends javax.swing.JPanel {
  
         
         JOptionPane.showMessageDialog(this, "New Employee Created");
-//        }
-//        else{
-//            JOptionPane.showMessageDialog(this, "Please add the correct field");
-//        }
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "Please add the correct field");
+        }
         txtName.setText("");
         txtEmpID.setText("");
      //   txtGender.setText("");
@@ -341,7 +360,11 @@ public class CreateJPanel extends javax.swing.JPanel {
         txtEmailID.setText("");
        // txtUploadPhoto.setText("");
     }//GEN-LAST:event_btnSaveActionPerformed
+    catch(Exception e){
+       JOptionPane.showMessageDialog(this, "Please add the correct field");
 
+    }
+    }
     private void txtStartDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtStartDateActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtStartDateActionPerformed
@@ -382,6 +405,10 @@ public class CreateJPanel extends javax.swing.JPanel {
     //  file.setCurrentDirectory(dir);
         
     }//GEN-LAST:event_btnPhotoActionPerformed
+
+    private void cmbLevelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbLevelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbLevelActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

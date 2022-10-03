@@ -4,6 +4,8 @@
  */
 package firstassignment.model;
 
+import java.util.Date;
+
 /**
  *
  * @author sweta
@@ -14,7 +16,7 @@ public class CreateEmployee {
     private String empID;
     private int age;
     private String gender;
-    private String startDate;
+    private Date startDate;
     private String level;
     private String teamInfo;
     private String positionTitle;
@@ -32,6 +34,14 @@ public class CreateEmployee {
 
     public String getEmpID() {
         return empID;
+    }
+    
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 
     public void setEmpID(String empID) {
@@ -54,13 +64,7 @@ public class CreateEmployee {
         this.gender = gender;
     }
 
-    public String getStartDate() {
-        return startDate;
-    }
 
-    public void setStartDate(String startDate) {
-        this.startDate = startDate;
-    }
 
     public String getLevel() {
         return level;
@@ -110,10 +114,10 @@ public class CreateEmployee {
         this.photo = photo;
     }
     
-    @Override
-    public String toString() {
-        return startDate;
-    }
+//    @Override
+//    public String toString() {
+//        return startDate;
+//    }
 
     
  
