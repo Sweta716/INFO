@@ -57,6 +57,11 @@ public class Home extends javax.swing.JFrame {
 
         btnAddDiagnosisInfo.setText("Add Diagnosis Information");
         btnAddDiagnosisInfo.setPreferredSize(new java.awt.Dimension(240, 59));
+        btnAddDiagnosisInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddDiagnosisInfoActionPerformed(evt);
+            }
+        });
 
         btnAddHistory.setText("Full History of the patient");
         btnAddHistory.setPreferredSize(new java.awt.Dimension(240, 59));
@@ -151,6 +156,11 @@ public class Home extends javax.swing.JFrame {
         new AddNewPatientRecord().setVisible(true);
         
     }//GEN-LAST:event_btnAddPatientActionPerformed
+
+    private void btnAddDiagnosisInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDiagnosisInfoActionPerformed
+        // TODO add your handling code here:
+        new AddDiagnosisInformation().setVisible(true);
+    }//GEN-LAST:event_btnAddDiagnosisInfoActionPerformed
 
     /**
      * @param args the command line arguments
