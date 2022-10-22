@@ -65,12 +65,27 @@ public class Home extends javax.swing.JFrame {
 
         btnAddHistory.setText("Full History of the patient");
         btnAddHistory.setPreferredSize(new java.awt.Dimension(240, 59));
+        btnAddHistory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddHistoryActionPerformed(evt);
+            }
+        });
 
         btnUpdate.setText("Update patient record");
         btnUpdate.setPreferredSize(new java.awt.Dimension(240, 59));
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
 
         btnHospitalInfo.setText("Hospital Information");
         btnHospitalInfo.setPreferredSize(new java.awt.Dimension(240, 59));
+        btnHospitalInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHospitalInfoActionPerformed(evt);
+            }
+        });
 
         btnLogOut.setText("Log Out");
         btnLogOut.setPreferredSize(new java.awt.Dimension(240, 59));
@@ -161,6 +176,21 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         new AddDiagnosisInformation().setVisible(true);
     }//GEN-LAST:event_btnAddDiagnosisInfoActionPerformed
+
+    private void btnAddHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddHistoryActionPerformed
+        // TODO add your handling code here:
+        new HistoryPatient().setVisible(true);
+    }//GEN-LAST:event_btnAddHistoryActionPerformed
+
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        // TODO add your handling code here:
+        new UpdatePatient().setVisible(true);
+    }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void btnHospitalInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHospitalInfoActionPerformed
+        // TODO add your handling code here:
+        new HospitalInformation().setVisible(true);
+    }//GEN-LAST:event_btnHospitalInfoActionPerformed
 
     /**
      * @param args the command line arguments
