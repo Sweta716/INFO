@@ -5,6 +5,10 @@
 package secondAssignment.system.ui;
 
 import javax.swing.JOptionPane;
+import secondAssignment.system.ui.Doctor.Doctor;
+import secondAssignment.system.ui.community.CommintyAdmin;
+import secondAssignment.system.ui.hospital.HospitalAdmin;
+import secondAssignment.system.ui.patient.Patient;
 
 /**
  *
@@ -125,10 +129,33 @@ public class Login extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
-        if(txtUserName.getText().equals("hms") && pwdPassword.getText().equals("admin"))
+        String userName = txtUserName.getText();
+        String passWord = pwdPassword.getText();
+        
+        if(userName.equals("admin") && passWord.equals("admin"))
         {
             setVisible(false);
             new Home().setVisible(true);
+        }
+        else if(userName.equals("communityadmin") && passWord.equals("admin")){
+            setVisible(false);
+            new CommintyAdmin().setVisible(true);
+        }
+        else if(userName.equals("hospitaladmin") && passWord.equals("admin")){
+            setVisible(false);
+            new HospitalAdmin().setVisible(true);
+        }
+        else if(userName.equals("doctor") && passWord.equals("admin")){
+            setVisible(false);
+            new Doctor().setVisible(true);
+        }
+        else if(userName.equals("patient1") && passWord.equals("admin")){
+            setVisible(false);
+            new Patient().setVisible(true);
+        }
+        else if(userName.equals("patient2") && passWord.equals("admin")){
+            setVisible(false);
+             new Patient().setVisible(true);
         }
         else{
             JOptionPane.showMessageDialog(null, "Incorrect username or password");
