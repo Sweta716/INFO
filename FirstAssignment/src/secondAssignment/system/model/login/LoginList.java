@@ -11,18 +11,19 @@ import java.util.ArrayList;
  * @author sweta
  */
 public class LoginList {
-     private ArrayList<AddLogin> loginList;
+     private ArrayList<Credentials> loginList;
      public LoginList(){
         loginList = new ArrayList<>();
     }
-    public ArrayList<AddLogin> getLoginList() {
+    public ArrayList<Credentials> getLoginList() {
         return loginList;
     }
 
-    public void setLoginList(ArrayList<AddLogin> loginList) {
+    public void setLoginList(ArrayList<Credentials> loginList) {
         this.loginList = loginList;
     }
-    public AddLogin addlogin(AddLogin login){
+    public Credentials addlogin(){
+        Credentials login = new Credentials();
         loginList.add(login);
         return login;
     }

@@ -4,13 +4,13 @@
  */
 package secondAssignment.system.model.login;
 
-import java.util.ArrayList;
+
 
 /**
  *
  * @author sweta
  */
-public class AddLogin {
+public class Credentials {
     String role;
     String userName;
     String passWord;

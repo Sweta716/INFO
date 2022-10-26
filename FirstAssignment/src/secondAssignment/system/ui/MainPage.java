@@ -4,6 +4,10 @@
  */
 package secondAssignment.system.ui;
 
+import javax.swing.JOptionPane;
+import secondAssignment.system.model.login.Credentials;
+import secondAssignment.system.model.login.LoginList;
+
 /**
  *
  * @author sweta
@@ -13,8 +17,11 @@ public class MainPage extends javax.swing.JFrame {
     /**
      * Creates new form MainPage
      */
+     LoginList lgnList;
     public MainPage() {
+        
         initComponents();
+        lgnList = new LoginList();
     }
 
     /**
@@ -26,68 +33,30 @@ public class MainPage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        adminbtn2 = new javax.swing.JButton();
-        adminbtn = new javax.swing.JButton();
-        adminbtn3 = new javax.swing.JButton();
-        adminbtn1 = new javax.swing.JButton();
-        adminbtn4 = new javax.swing.JButton();
+        btnClose = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        adminbtn2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        adminbtn2.setForeground(new java.awt.Color(51, 153, 255));
-        adminbtn2.setText("System Admin");
-        adminbtn2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                adminbtn2MouseClicked(evt);
-            }
-        });
-        adminbtn2.addActionListener(new java.awt.event.ActionListener() {
+        btnClose.setText("Close");
+        btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adminbtn2ActionPerformed(evt);
+                btnCloseActionPerformed(evt);
             }
         });
 
-        adminbtn.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        adminbtn.setForeground(new java.awt.Color(51, 153, 255));
-        adminbtn.setText("Hospital Admin");
-        adminbtn.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("Login");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adminbtnActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
-        adminbtn3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        adminbtn3.setForeground(new java.awt.Color(51, 153, 255));
-        adminbtn3.setText("Doctor");
-        adminbtn3.addActionListener(new java.awt.event.ActionListener() {
+        jButton2.setText("Admin");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adminbtn3ActionPerformed(evt);
-            }
-        });
-
-        adminbtn1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        adminbtn1.setForeground(new java.awt.Color(51, 153, 255));
-        adminbtn1.setText("Patient");
-        adminbtn1.setToolTipText("Hospital Admin");
-        adminbtn1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adminbtn1ActionPerformed(evt);
-            }
-        });
-
-        adminbtn4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        adminbtn4.setForeground(new java.awt.Color(51, 153, 255));
-        adminbtn4.setText("Community Admin");
-        adminbtn4.setToolTipText("");
-        adminbtn4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                adminbtn4MouseClicked(evt);
-            }
-        });
-        adminbtn4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adminbtn4ActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
 
@@ -95,71 +64,54 @@ public class MainPage extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(143, 143, 143)
-                .addComponent(adminbtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addComponent(adminbtn4)
-                .addGap(63, 63, 63)
-                .addComponent(adminbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addComponent(adminbtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(adminbtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(148, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(181, 181, 181)
+                .addComponent(jButton1)
+                .addGap(119, 119, 119)
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 151, Short.MAX_VALUE)
+                .addComponent(btnClose)
+                .addGap(145, 145, 145))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(265, Short.MAX_VALUE)
+                .addContainerGap(367, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(adminbtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(adminbtn4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(adminbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(adminbtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(adminbtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(325, 325, 325))
+                    .addComponent(btnClose)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addGap(111, 111, 111))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void adminbtn2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminbtn2MouseClicked
-        ////Adminlogin a=new Adminlogin();
-        //a.setVisible(true);
-        //this.setVisible(false);
-    }//GEN-LAST:event_adminbtn2MouseClicked
-
-    private void adminbtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminbtn2ActionPerformed
+    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_adminbtn2ActionPerformed
+        int a = JOptionPane.showConfirmDialog(null, "Do you really want to close application","Select",JOptionPane.YES_NO_OPTION);
+        if (a==0)
+        System.exit(0);
 
-    private void adminbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminbtnActionPerformed
-        //       //ReceptionistLogin rl=new ReceptionistLogin();
-        //       rl.setVisible(true);
-        //       this.dispose();
-    }//GEN-LAST:event_adminbtnActionPerformed
+    }//GEN-LAST:event_btnCloseActionPerformed
 
-    private void adminbtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminbtn3ActionPerformed
-        //doctorlogin dl=new doctorlogin();
-        //dl.setVisible(true);
-        //this.dispose();        // TODO add your handling code here:
-    }//GEN-LAST:event_adminbtn3ActionPerformed
-
-    private void adminbtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminbtn1ActionPerformed
-        //  medicinedetails1 ma=new medicinedetails1();
-        //        ma.setVisible(true);
-        //        this.dispose();
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_adminbtn1ActionPerformed
+         
+         Credentials lgn = lgnList.addlogin();
+         lgn.setUserName("admin");
+         lgn.setPassWord("admin");
+         lgn.setRole("admin");
+         lgn.setName("admin");
+        
+        new Login(lgnList).setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void adminbtn4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminbtn4MouseClicked
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_adminbtn4MouseClicked
-
-    private void adminbtn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminbtn4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_adminbtn4ActionPerformed
+       
+        new Home(lgnList).setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,6 +141,7 @@ public class MainPage extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MainPage().setVisible(true);
@@ -197,10 +150,8 @@ public class MainPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton adminbtn;
-    private javax.swing.JButton adminbtn1;
-    private javax.swing.JButton adminbtn2;
-    private javax.swing.JButton adminbtn3;
-    private javax.swing.JButton adminbtn4;
+    private javax.swing.JButton btnClose;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     // End of variables declaration//GEN-END:variables
 }
