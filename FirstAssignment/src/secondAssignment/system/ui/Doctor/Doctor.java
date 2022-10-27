@@ -80,7 +80,7 @@ public class Doctor extends javax.swing.JFrame {
         if (a == 0) {
             setVisible(false);
              System.out.println("outside doc");
-            new Login( lgnList).setVisible(true);
+            new Login(lgnList).setVisible(true);
         }
     }//GEN-LAST:event_btnLogOutActionPerformed
 
