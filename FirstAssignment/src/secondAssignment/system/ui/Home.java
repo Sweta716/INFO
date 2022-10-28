@@ -198,12 +198,12 @@ public class Home extends javax.swing.JFrame {
 
     private void btnAddDiagnosisInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDiagnosisInfoActionPerformed
         // TODO add your handling code here:
-        new AddDiagnosisInformation().setVisible(true);
+        new AddDiagnosisInformation(patientList,city).setVisible(true);
     }//GEN-LAST:event_btnAddDiagnosisInfoActionPerformed
 
     private void btnAddHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddHistoryActionPerformed
         // TODO add your handling code here:
-        new HistoryPatient().setVisible(true);
+        new HistoryPatient(patientList,city).setVisible(true);
     }//GEN-LAST:event_btnAddHistoryActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
