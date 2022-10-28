@@ -6,6 +6,8 @@ package secondAssignment.system.ui;
 
 import javax.swing.JOptionPane;
 import secondAssignment.system.model.login.LoginList;
+import secondAssignment.system.person.City;
+import secondAssignment.system.person.PatientDirectory;
 
 /**
  *
@@ -18,9 +20,13 @@ public class Home extends javax.swing.JFrame {
     /**
      * Creates new form Home
      */
+    PatientDirectory patientList;
+    City city;
     public Home(LoginList loginlist) {
         initComponents();
         this.lgnList = loginlist;
+        patientList = new PatientDirectory();
+        city =new City();
     }
        
 
@@ -186,7 +192,7 @@ public class Home extends javax.swing.JFrame {
 
     private void btnAddPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddPatientActionPerformed
         // TODO add your handling code here:
-        new AddNewPatientRecord().setVisible(true);
+        new AddNewPatientRecord(patientList,city).setVisible(true);
         
     }//GEN-LAST:event_btnAddPatientActionPerformed
 

@@ -12,10 +12,13 @@ import java.util.ArrayList;
  */
 public class HospitalTest {
     public static void main(String[] args) {
-        Patient p = new Patient("sweta","20","contact_patiient","PA12345678",
-        new ArrayList<MedicalReport>()
-        );
-        System.out.println(p);
-    }
+//        Patient p = new Patient("sweta","20","contact_patiient","PA12345678",
+//        new ArrayList<MedicalReport>()
+//        );
+//House house = "abc";
+//         Patient p = new Patient(new EncounterHistory(), "string","1","23","string", new City(),new House(),new Community());
+//        System.out.println(p);
+//    }
     
+}
 }

@@ -11,12 +11,17 @@ package secondAssignment.system.person;
 public class HospitalEmployee extends Person{
     
     private String employeeID;
-    
-    public HospitalEmployee(String name, String age, String contact,String employeeID) {
-        super(name, age, contact);
+
+    public HospitalEmployee(String name, Integer patientID, Integer age, String email, City city, House house, Community community) {
+        super(name, patientID, age, email, city, house, community);
         setEmployeeID(employeeID);
-        
     }
+    
+//    public HospitalEmployee(String name, String age, String contact,String employeeID) {
+//        super(name, age, contact);
+//        setEmployeeID(employeeID);
+//        
+//    }
 
     public String getEmployeeID() {
         return employeeID;

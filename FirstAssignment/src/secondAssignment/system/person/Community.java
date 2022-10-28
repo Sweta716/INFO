@@ -4,52 +4,43 @@
  */
 package secondAssignment.system.person;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author sweta
  */
-public class Community {
-    String address;
-    String state;
-    String city;
-    String pincode;
 
-    public String getAddress() {
-        return address;
+   public class Community {
+      public String communityName;
+      private ArrayList<House> houseList;
+ 
+       public Community(){
+        houseList = new ArrayList<>();
+        }
+      
+    public String getCommunityName() {
+        return communityName;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getPincode() {
-        return pincode;
-    }
-
-    public void setPincode(String pincode) {
-        this.pincode = pincode;
-    }
-
-    @Override
-    public String toString() {
-        return "Community{" + "address=" + address + ", state=" + state + ", city=" + city + ", pincode=" + pincode + '}';
+    public void setCommunityName(String communityName) {
+        this.communityName = communityName;
     }
     
+
+    public ArrayList<House> getHouseList() {
+        return houseList;
+    }
+
+    public void setHouseList(ArrayList<House> houseList) {
+        this.houseList = houseList;
+    }
+    
+   
+    
+    public House addHouse(House house){
+        houseList.add(house);
+        return house;
+    }
     
 }

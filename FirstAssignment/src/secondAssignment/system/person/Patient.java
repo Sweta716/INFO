@@ -11,40 +11,59 @@ import java.util.ArrayList;
  * @author sweta
  */
 public class Patient extends Person {
-    private String patientID;
-    private ArrayList<MedicalReport> reports;
+     
+
+   EncounterHistory encounterHistory;
     
+    Boolean isBPAbnormal;
+    Boolean isBTAbnormal;
+    Boolean isPulseAbnormal;
+    Boolean isRespirationAbnormal;
+
+    public EncounterHistory getEncounterHistory() {
+        return encounterHistory;
+    }
+
+    public void setEncounterHistory(EncounterHistory encounterHistory) {
+        this.encounterHistory = encounterHistory;
+    }
     
-    public Patient(String name, String age, String contact, String patientID,ArrayList<MedicalReport> reports ) {
-        super(name, age, contact);
-        setPatientID(patientID);
-        setReports(reports);
+    public Patient( EncounterHistory encounterHistory,String name, Integer patientID,Integer age, String email,City city, House house,Community community) {
+        super(name, patientID, age, email,city,house,community);
+        this.encounterHistory=encounterHistory;
+        
     }
 
-    public String getPatientID() {
-        return patientID;
+    public Boolean getIsBPAbnormal() {
+        return isBPAbnormal;
     }
 
-    public void setPatientID(String patientID) {
-        if(patientID.startsWith("PA") && patientID.length() == 10){
-            this.patientID = patientID;
-        }
-        else{
-            throw new IllegalArgumentException("worng patient id");
-        }
+    public void setIsBPAbnormal(Boolean isBPAbnormal) {
+        this.isBPAbnormal = isBPAbnormal;
     }
 
-    public ArrayList<MedicalReport> getReports() {
-        return reports;
+    public Boolean getIsBTAbnormal() {
+        return isBTAbnormal;
     }
 
-    public void setReports(ArrayList<MedicalReport> reports) {
-        this.reports = reports;
+    public void setIsBTAbnormal(Boolean isBTAbnormal) {
+        this.isBTAbnormal = isBTAbnormal;
     }
 
-    @Override
-    public String toString() {
-        return String.format("[%s] %s,%s",patientID, super.toString(),reports );
+    public Boolean getIsPulseAbnormal() {
+        return isPulseAbnormal;
+    }
+
+    public void setIsPulseAbnormal(Boolean isPulseAbnormal) {
+        this.isPulseAbnormal = isPulseAbnormal;
+    }
+
+    public Boolean getIsRespirationAbnormal() {
+        return isRespirationAbnormal;
+    }
+
+    public void setIsRespirationAbnormal(Boolean isRespirationAbnormal) {
+        this.isRespirationAbnormal = isRespirationAbnormal;
     }
     
     

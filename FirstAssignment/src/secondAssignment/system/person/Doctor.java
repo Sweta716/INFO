@@ -18,10 +18,10 @@ public class Doctor extends HospitalEmployee {
     
     private String department;
     
-    public Doctor(String name, String age, String contact, String employeeID) {
-        super(name, age, contact, employeeID);
-        setDepartment(department);
-    }
+//    public Doctor(String name, String age, String contact, String employeeID) {
+//        super(name, age, contact, employeeID);
+//        setDepartment(department);
+//    }
 
     public static ArrayList<String> getDepartment_List() {
         return Department_List;
@@ -29,6 +29,12 @@ public class Doctor extends HospitalEmployee {
 
     public static void setDepartment_List(ArrayList<String> Department_List) {
         Doctor.Department_List = Department_List;
+        
+    }
+
+    public Doctor(String name, Integer patientID, Integer age, String email, City city, House house, Community community) {
+        super(name, patientID, age, email, city, house, community);
+        setDepartment(department);
     }
 
     public String getDepartment() {
