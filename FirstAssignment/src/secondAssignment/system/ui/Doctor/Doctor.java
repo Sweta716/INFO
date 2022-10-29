@@ -6,6 +6,10 @@ package secondAssignment.system.ui.Doctor;
 
 import javax.swing.JOptionPane;
 import secondAssignment.system.model.login.LoginList;
+import secondAssignment.system.person.City;
+import secondAssignment.system.person.PatientDirectory;
+import secondAssignment.system.ui.AddDiagnosisInformation;
+import secondAssignment.system.ui.HistoryPatient;
 import secondAssignment.system.ui.Login;
 
 /**
@@ -17,10 +21,15 @@ public class Doctor extends javax.swing.JFrame {
     /**
      * Creates new form Doctor
      */
+     PatientDirectory patientList;
+    City city;
     LoginList lgnList;
-    public Doctor(LoginList lgnList) {
+    public Doctor(LoginList lgnList,PatientDirectory patientList,City city) {
         initComponents();
          this.lgnList = lgnList;
+         this.city = city;
+         this.patientList = patientList;
+         
     }
 
     /**
@@ -34,6 +43,8 @@ public class Doctor extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         btnLogOut = new javax.swing.JButton();
+        btnAddDiagnosisInfo = new javax.swing.JButton();
+        btnAddHistory = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -47,26 +58,49 @@ public class Doctor extends javax.swing.JFrame {
             }
         });
 
+        btnAddDiagnosisInfo.setText("Add Diagnosis Information");
+        btnAddDiagnosisInfo.setPreferredSize(new java.awt.Dimension(240, 59));
+        btnAddDiagnosisInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddDiagnosisInfoActionPerformed(evt);
+            }
+        });
+
+        btnAddHistory.setText("Full History of the patient");
+        btnAddHistory.setPreferredSize(new java.awt.Dimension(240, 59));
+        btnAddHistory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddHistoryActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(1113, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(btnAddDiagnosisInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnAddHistory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(1079, 1079, 1079))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 631, Short.MAX_VALUE)
+                .addGap(65, 65, 65)
+                .addComponent(btnAddDiagnosisInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnAddHistory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 449, Short.MAX_VALUE)
                 .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16))
         );
@@ -80,9 +114,21 @@ public class Doctor extends javax.swing.JFrame {
         if (a == 0) {
             setVisible(false);
              System.out.println("outside doc");
-            new Login(lgnList).setVisible(true);
+            new Login(lgnList,patientList,city).setVisible(true);
         }
     }//GEN-LAST:event_btnLogOutActionPerformed
+
+    private void btnAddDiagnosisInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDiagnosisInfoActionPerformed
+        // TODO add your handling code here:
+        new AddDiagnosisInformation(patientList,city).setVisible(true);
+        System.out.println(patientList.toString());
+        System.out.println(city.toString());
+    }//GEN-LAST:event_btnAddDiagnosisInfoActionPerformed
+
+    private void btnAddHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddHistoryActionPerformed
+        // TODO add your handling code here:
+        new HistoryPatient(patientList,city).setVisible(true);
+    }//GEN-LAST:event_btnAddHistoryActionPerformed
 
     /**
      * @param args the command line arguments
@@ -120,6 +166,8 @@ public class Doctor extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAddDiagnosisInfo;
+    private javax.swing.JButton btnAddHistory;
     private javax.swing.JButton btnLogOut;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables

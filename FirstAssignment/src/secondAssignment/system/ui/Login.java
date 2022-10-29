@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import secondAssignment.system.model.login.Credentials;
 import secondAssignment.system.model.login.LoginList;
+import secondAssignment.system.person.City;
+import secondAssignment.system.person.PatientDirectory;
 import secondAssignment.system.ui.Doctor.Doctor;
 import secondAssignment.system.ui.community.CommintyAdmin;
 import secondAssignment.system.ui.hospital.HospitalAdmin;
@@ -23,10 +25,13 @@ public class Login extends javax.swing.JFrame {
      * Creates new form Login
      */
     LoginList lgnList;
-
-    public Login(LoginList lgnList) {
+ PatientDirectory patientList;
+    City city;
+    public Login(LoginList lgnList,PatientDirectory patientList, City city ) {
         initComponents();
         this.lgnList = lgnList;
+         this.city = city;
+         this.patientList = patientList;
     }
 
     /**
@@ -144,6 +149,8 @@ public class Login extends javax.swing.JFrame {
             //for (int i = 0; i < lgnList.getLoginList().size(); i++) {
             String userNm = (cred.getUserName());
             String pwd = (cred.getPassWord());
+            System.out.println(pwd);
+            
             String role = (cred.getRole());
             emp.add(cred);
             System.out.println(emp.toString());
@@ -153,20 +160,20 @@ public class Login extends javax.swing.JFrame {
             if (userName.equals(userNm) && passWord.equals(pwd) && role.contains("doctor")) {
                 setVisible(false);
                 System.out.println(userNm);
-                new Doctor(lgnList).setVisible(true);
+                new Doctor(lgnList,patientList,city).setVisible(true);
 
             } else if (userName.equals(userNm) && passWord.equals(pwd) && role.contains("patient")) {
                 setVisible(false);
                 System.out.println(userNm);
-                new Patient(lgnList).setVisible(true);
+                new Patient(lgnList,patientList,city).setVisible(true);
 
             } else if (userName.equals(userNm) && passWord.equals(pwd) && role.contains("hospital admin")) {
                 setVisible(false);
-                new HospitalAdmin(lgnList).setVisible(true);
+                new HospitalAdmin(lgnList,patientList,city).setVisible(true);
 
             } else if (userName.equals(userNm) && passWord.equals(pwd) && role.contains("community admin")) {
                 setVisible(false);
-                new CommintyAdmin(lgnList).setVisible(true);
+                new CommintyAdmin(lgnList,patientList,city).setVisible(true);
 
             } else if (userName.equals(userNm) && passWord.equals(pwd) && role.contains("admin")) {
                 setVisible(false);

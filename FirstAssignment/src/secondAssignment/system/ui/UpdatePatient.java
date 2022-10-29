@@ -5,6 +5,11 @@
 package secondAssignment.system.ui;
 
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import secondAssignment.system.person.City;
+import secondAssignment.system.person.Encounter;
+import secondAssignment.system.person.Patient;
+import secondAssignment.system.person.PatientDirectory;
 
 /**
  *
@@ -15,8 +20,13 @@ public class UpdatePatient extends javax.swing.JFrame {
     /**
      * Creates new form UpdatePatient
      */
-    public UpdatePatient() {
+    PatientDirectory pList;
+    City city;
+
+    public UpdatePatient(PatientDirectory pList, City city) {
         initComponents();
+        this.pList = pList;
+        this.city = city;
     }
 
     /**
@@ -28,53 +38,27 @@ public class UpdatePatient extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnCloes = new javax.swing.JButton();
+        btnUpdate = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblDisplay = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
+        txtPatientID = new javax.swing.JTextField();
+        btnEdit = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        txtMajorDisease = new javax.swing.JTextField();
-        txtPatientID = new javax.swing.JTextField();
         txtName = new javax.swing.JTextField();
-        txtContactNo = new javax.swing.JTextField();
         txtAge = new javax.swing.JTextField();
-        txtGender = new javax.swing.JTextField();
-        txtBloodGroup = new javax.swing.JTextField();
-        txtAddress = new javax.swing.JTextField();
-        btnSearch = new javax.swing.JButton();
-        btnCloes = new javax.swing.JButton();
-        btnUpdate = new javax.swing.JButton();
+        txtHouse = new javax.swing.JTextField();
+        txtEmail = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(280, 150));
         setUndecorated(true);
-
-        jLabel1.setText("Patient ID");
-
-        jLabel2.setText("Name");
-
-        jLabel3.setText("Contact No");
-
-        jLabel4.setText("Age");
-
-        jLabel5.setText("Gender");
-
-        jLabel6.setText("Blood Group");
-
-        jLabel7.setText("Address");
-
-        jLabel8.setText("Any Major Disease Suffered Earlier");
-
-        btnSearch.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnSearch.setText("Search");
-        btnSearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchActionPerformed(evt);
-            }
-        });
 
         btnCloes.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnCloes.setText("Close");
@@ -92,86 +76,127 @@ public class UpdatePatient extends javax.swing.JFrame {
             }
         });
 
+        jLabel9.setText("Update Patient");
+
+        tblDisplay.setBackground(new java.awt.Color(242, 242, 242));
+        tblDisplay.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Name", "Patient ID", "Age", "Email", "House", "Community", "City", "Temperature", "Heart Rate", "Blood Pressure", "Respiratory Rate", "Weight", "TimeStamp"
+            }
+        ));
+        jScrollPane1.setViewportView(tblDisplay);
+
+        jLabel1.setText("PatientID");
+
+        btnEdit.setText("Edit");
+        btnEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditActionPerformed(evt);
+            }
+        });
+
+        btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Name");
+
+        jLabel3.setText("Age");
+
+        jLabel4.setText("House");
+
+        jLabel5.setText("Email");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 768, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(167, 167, 167)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(52, 52, 52)
+                        .addComponent(txtPatientID, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(102, 102, 102)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(76, 76, 76)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtPatientID, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtContactNo, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtGender, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtBloodGroup, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(txtMajorDisease)))
+                        .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(112, 112, 112)
-                        .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(61, 61, 61)
+                        .addGap(41, 41, 41)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtAge))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtHouse))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtName))))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnCloes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(246, Short.MAX_VALUE))
+                    .addComponent(btnCloes, javax.swing.GroupLayout.DEFAULT_SIZE, 76, Short.MAX_VALUE)
+                    .addComponent(btnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(34, 34, 34))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(23, 23, 23)
+                .addComponent(jLabel9)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtPatientID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnSearch)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtPatientID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDelete)
+                    .addComponent(btnEdit))
+                .addGap(61, 61, 61)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(txtContactNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
                     .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(txtGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(txtBloodGroup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtMajorDisease, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtHouse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCloes)
                     .addComponent(btnUpdate))
-                .addGap(92, 92, 92))
+                .addGap(18, 18, 18))
         );
 
         pack();
@@ -182,97 +207,137 @@ public class UpdatePatient extends javax.swing.JFrame {
         setVisible(false);
     }//GEN-LAST:event_btnCloesActionPerformed
 
-    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        // TODO add your handling code here:
-//        txtAddress
-//    txtAge
-//    txtBloodGroup
-//    txtContactNo
-//    txtGender
-//    txtMajorDisease
-//    txtName
-
-        String patientID = txtPatientID.getText();
-        try {
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "patient ID doesnt exists");
-        }
-    }//GEN-LAST:event_btnSearchActionPerformed
-
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
-        String patientID = txtPatientID.getText();
-        String name = txtName.getText();
-        String contactNumber = txtContactNo.getText();
-        String age = txtAge.getText();
-        String gender = txtGender.getText();
-        String bloodgroup = txtBloodGroup.getText();
-        String address = txtAddress.getText();
-        String majorDisease = txtMajorDisease.getText();
-        try{
-            JOptionPane.showMessageDialog(null,"Updated");
-            setVisible(false);
-            new UpdatePatient().setVisible(true);
-        }catch(Exception e){
-             JOptionPane.showMessageDialog(null,"error");
-        }
 
+        Integer iD = Integer.parseInt(txtPatientID.getText());
+        for (int i = 0; i < pList.getPatientList().size(); i++) {
+            int patientid = (pList.getPatientList().get(i).getPatientID());
+            if (iD == patientid) {
+                pList.getPatientList().get(i).setName(txtName.getText());
+                pList.getPatientList().get(i).setAge(Integer.parseInt(txtAge.getText()));
+                pList.getPatientList().get(i).setEmail(txtEmail.getText());
+                pList.getPatientList().get(i).getHouse().setHouseNumber(txtHouse.getText());
+                //TODO other details
+
+            }
+        }
+        populateTable();
     }//GEN-LAST:event_btnUpdateActionPerformed
 
+    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
+        // TODO add your handling code here:
+        Integer iD = Integer.parseInt(txtPatientID.getText());
+        for (int i = 0; i < pList.getPatientList().size(); i++) {
+            int patientid = (pList.getPatientList().get(i).getPatientID());
+            if (iD == patientid) {
+                txtName.setText(pList.getPatientList().get(i).getName());
+                txtAge.setText(pList.getPatientList().get(i).getAge().toString());
+                //txtPatCity.setText(history.getpatientDirectory().get(i));
+                txtEmail.setText(pList.getPatientList().get(i).getEmail());
+                txtHouse.setText(pList.getPatientList().get(i).getHouse().getHouseNumber());
+                //TODO other details
+            }
+        }
+    }//GEN-LAST:event_btnEditActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        // TODO add your handling code here:
+        try {
+            Integer pID = Integer.parseInt(txtPatientID.getText());
+            for (int i = 0; i < pList.getPatientList().size(); i++) {
+                int patientid = (pList.getPatientList().get(i).getPatientID());
+                if (pID == patientid) {
+                    pList.deletePatient(pList.getPatientList().get(i));
+                }
+            }
+
+        } catch (NumberFormatException nfe) {
+
+        }
+        populateTable();
+    }//GEN-LAST:event_btnDeleteActionPerformed
+    private void populateTable() {
+
+        DefaultTableModel model = (DefaultTableModel) tblDisplay.getModel();
+        model.setRowCount(0);
+
+        for (int i = 0; i < pList.getPatientList().size(); i++) {
+
+            Patient p = pList.getPatientList().get(i);
+
+            for (Encounter e : p.getEncounterHistory().getEncounterHistory()) {
+                Object[] object
+                        = {
+                            p.getName(),
+                            p.getPatientID(),
+                            p.getAge(),
+                            p.getEmail(),
+                            p.getHouse().getHouseNumber(),
+                            p.getCommunity().getCommunityName(),
+                            city.getCityName(),
+                            e.getVitalSigns().getTemperature(),
+                            e.getVitalSigns().getHR(),
+                            e.getVitalSigns().getBloodPressure(),
+                            e.getVitalSigns().getRespiratoryRate(),
+                            e.getVitalSigns().getWeight(),
+                            e.getDateOfEncounter()
+                        };
+                model.addRow(object);
+            }
+        }
+    }
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(UpdatePatient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(UpdatePatient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(UpdatePatient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(UpdatePatient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new UpdatePatient().setVisible(true);
-            }
-        });
-    }
+    //    public static void main(String args[]) {
+    //        /* Set the Nimbus look and feel */
+    //        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+    //        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+    //         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+    //         */
+    //        try {
+    //            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+    //                if ("Nimbus".equals(info.getName())) {
+    //                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+    //                    break;
+    //                }
+    //            }
+    //        } catch (ClassNotFoundException ex) {
+    //            java.util.logging.Logger.getLogger(UpdatePatient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    //        } catch (InstantiationException ex) {
+    //            java.util.logging.Logger.getLogger(UpdatePatient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    //        } catch (IllegalAccessException ex) {
+    //            java.util.logging.Logger.getLogger(UpdatePatient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    //        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+    //            java.util.logging.Logger.getLogger(UpdatePatient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    //        }
+    //        //</editor-fold>
+    //
+    //        /* Create and display the form */
+    //        java.awt.EventQueue.invokeLater(new Runnable() {
+    //            public void run() {
+    //                new UpdatePatient().setVisible(true);
+    //            }
+    //        });
+    //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCloes;
-    private javax.swing.JButton btnSearch;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnEdit;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JTextField txtAddress;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tblDisplay;
     private javax.swing.JTextField txtAge;
-    private javax.swing.JTextField txtBloodGroup;
-    private javax.swing.JTextField txtContactNo;
-    private javax.swing.JTextField txtGender;
-    private javax.swing.JTextField txtMajorDisease;
+    private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtHouse;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtPatientID;
     // End of variables declaration//GEN-END:variables

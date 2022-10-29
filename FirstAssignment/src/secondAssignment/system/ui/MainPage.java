@@ -7,6 +7,8 @@ package secondAssignment.system.ui;
 import javax.swing.JOptionPane;
 import secondAssignment.system.model.login.Credentials;
 import secondAssignment.system.model.login.LoginList;
+import secondAssignment.system.person.City;
+import secondAssignment.system.person.PatientDirectory;
 
 /**
  *
@@ -18,6 +20,8 @@ public class MainPage extends javax.swing.JFrame {
      * Creates new form MainPage
      */
      LoginList lgnList;
+     PatientDirectory patientList;
+    City city;
     public MainPage() {
         
         initComponents();
@@ -104,7 +108,7 @@ public class MainPage extends javax.swing.JFrame {
          lgn.setRole("admin");
          lgn.setName("admin");
         
-        new Login(lgnList).setVisible(true);
+        new Login(lgnList,patientList,city).setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

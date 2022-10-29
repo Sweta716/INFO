@@ -47,6 +47,7 @@ public class Home extends javax.swing.JFrame {
         btnHospitalInfo = new javax.swing.JButton();
         btnLogOut = new javax.swing.JButton();
         btnAddLogin = new javax.swing.JButton();
+        btnAbnormality = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -113,10 +114,21 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        btnAbnormality.setText("View Abnormality in Community");
+        btnAbnormality.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAbnormalityActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(btnAddLogin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -125,12 +137,9 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(btnUpdate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnAddHistory, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnAddDiagnosisInfo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnAddPatient, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnAddPatient, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnAbnormality, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 1093, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,8 +159,10 @@ public class Home extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnHospitalInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnAbnormality, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(225, Short.MAX_VALUE))
+                .addContainerGap(165, Short.MAX_VALUE))
         );
 
         pack();
@@ -164,7 +175,7 @@ public class Home extends javax.swing.JFrame {
             setVisible(false);
 
            // new Login( lgnList).setVisible(true);
-           new Login( lgnList).setVisible(true);
+           new Login( lgnList,patientList,city).setVisible(true);
         }
     }//GEN-LAST:event_btnLogOutActionPerformed
 
@@ -178,14 +189,19 @@ public class Home extends javax.swing.JFrame {
             btnHospitalInfo.setLocation(819, 30);
             btnLogOut.setLocation(1062, 30);
             btnUpdate.setLocation(1062, 89);
+            btnAbnormality.setLocation(1062,150);
             i = 1;
         } else {
-            btnAddDiagnosisInfo.setLocation(10, 107);
-            btnAddHistory.setLocation(10, 184);
-            btnAddPatient.setLocation(10, 261);
-            btnHospitalInfo.setLocation(10, 338);
-            btnLogOut.setLocation(10, 490);
-            btnUpdate.setLocation(10, 415);
+            btnAddPatient.setLocation(5, 180);//updated 2
+            btnAddDiagnosisInfo.setLocation(10, 250);//updated 3
+            btnAddHistory.setLocation(10, 300);//updated 4
+            
+            btnHospitalInfo.setLocation(10, 350);//updated 5
+             btnUpdate.setLocation(10, 400);//updated 6
+             btnAbnormality.setLocation(10,450);//updated7
+            btnLogOut.setLocation(10, 500);//end
+           
+            
             i = 0;
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -208,7 +224,7 @@ public class Home extends javax.swing.JFrame {
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
-        new UpdatePatient().setVisible(true);
+        new UpdatePatient(patientList,city).setVisible(true);
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnHospitalInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHospitalInfoActionPerformed
@@ -220,6 +236,11 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         new AddLogin(lgnList).setVisible(true);
     }//GEN-LAST:event_btnAddLoginActionPerformed
+
+    private void btnAbnormalityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAbnormalityActionPerformed
+        // TODO add your handling code here:
+        new ViewAbnormality( patientList,  city).setVisible(true);
+    }//GEN-LAST:event_btnAbnormalityActionPerformed
 
     /**
      * @param args the command line arguments
@@ -257,6 +278,7 @@ public class Home extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAbnormality;
     private javax.swing.JButton btnAddDiagnosisInfo;
     private javax.swing.JButton btnAddHistory;
     private javax.swing.JButton btnAddLogin;

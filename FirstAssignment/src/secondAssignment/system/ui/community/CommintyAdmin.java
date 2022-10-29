@@ -6,6 +6,8 @@ package secondAssignment.system.ui.community;
 
 import javax.swing.JOptionPane;
 import secondAssignment.system.model.login.LoginList;
+import secondAssignment.system.person.City;
+import secondAssignment.system.person.PatientDirectory;
 import secondAssignment.system.ui.Login;
 
 /**
@@ -18,9 +20,13 @@ public class CommintyAdmin extends javax.swing.JFrame {
      * Creates new form CommintyAdmin
      */
     LoginList lgnList;
-    public CommintyAdmin(LoginList lgnList) {
+    PatientDirectory patientList;
+    City city;
+    public CommintyAdmin(LoginList lgnList,PatientDirectory patientList,City city) {
         initComponents();
          this.lgnList = lgnList;
+         this.city = city;
+         this.patientList = patientList;
     }
 
     /**
@@ -80,7 +86,7 @@ public class CommintyAdmin extends javax.swing.JFrame {
         if (a == 0) {
             setVisible(false);
 
-            new Login( lgnList).setVisible(true);
+            new Login( lgnList,patientList,city).setVisible(true);
         }
     }//GEN-LAST:event_btnLogOutActionPerformed
 
