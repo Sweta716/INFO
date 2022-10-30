@@ -9,6 +9,7 @@ import secondAssignment.system.model.login.LoginList;
 import secondAssignment.system.person.City;
 import secondAssignment.system.person.PatientDirectory;
 import secondAssignment.system.ui.Login;
+import secondAssignment.system.ui.ViewAbnormality;
 
 /**
  *
@@ -40,6 +41,9 @@ public class CommintyAdmin extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         btnLogOut = new javax.swing.JButton();
+        btnAbnormality = new javax.swing.JButton();
+        btnCreateCommunity = new javax.swing.JButton();
+        btnCreateCommunity1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,6 +57,27 @@ public class CommintyAdmin extends javax.swing.JFrame {
             }
         });
 
+        btnAbnormality.setText("View Abnormality in Community");
+        btnAbnormality.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAbnormalityActionPerformed(evt);
+            }
+        });
+
+        btnCreateCommunity.setText("Add City, Community, House");
+        btnCreateCommunity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateCommunityActionPerformed(evt);
+            }
+        });
+
+        btnCreateCommunity1.setText("Update City, Community, House");
+        btnCreateCommunity1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateCommunity1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -60,19 +85,34 @@ public class CommintyAdmin extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(55, 55, 55)
+                        .addGap(16, 16, 16)
+                        .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(1135, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addComponent(btnAbnormality, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnCreateCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnCreateCommunity1, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(1100, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addGap(15, 15, 15)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 650, Short.MAX_VALUE)
+                .addGap(27, 27, 27)
+                .addComponent(btnCreateCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnCreateCommunity1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnAbnormality, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 458, Short.MAX_VALUE)
                 .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19))
         );
@@ -89,6 +129,20 @@ public class CommintyAdmin extends javax.swing.JFrame {
             new Login( lgnList,patientList,city).setVisible(true);
         }
     }//GEN-LAST:event_btnLogOutActionPerformed
+
+    private void btnAbnormalityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAbnormalityActionPerformed
+        // TODO add your handling code here:
+        new ViewAbnormality( patientList,  city).setVisible(true);
+    }//GEN-LAST:event_btnAbnormalityActionPerformed
+
+    private void btnCreateCommunityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateCommunityActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnCreateCommunityActionPerformed
+
+    private void btnCreateCommunity1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateCommunity1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCreateCommunity1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -126,6 +180,9 @@ public class CommintyAdmin extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAbnormality;
+    private javax.swing.JButton btnCreateCommunity;
+    private javax.swing.JButton btnCreateCommunity1;
     private javax.swing.JButton btnLogOut;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables

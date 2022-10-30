@@ -8,6 +8,9 @@ import javax.swing.JOptionPane;
 import secondAssignment.system.model.login.LoginList;
 import secondAssignment.system.person.City;
 import secondAssignment.system.person.PatientDirectory;
+import secondAssignment.system.ui.AddDiagnosisInformation;
+import secondAssignment.system.ui.AddNewPatientRecord;
+import secondAssignment.system.ui.HistoryPatient;
 import secondAssignment.system.ui.Login;
 
 /**
@@ -40,6 +43,11 @@ public class HospitalAdmin extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         btnLogOut = new javax.swing.JButton();
+        btnCreateHospital = new javax.swing.JButton();
+        btnAddDiagnosisInfo = new javax.swing.JButton();
+        btnAddHistory = new javax.swing.JButton();
+        btnCreateHospital1 = new javax.swing.JButton();
+        btnAddPatient = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,6 +58,46 @@ public class HospitalAdmin extends javax.swing.JFrame {
         btnLogOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLogOutActionPerformed(evt);
+            }
+        });
+
+        btnCreateHospital.setText("Create Hospital");
+        btnCreateHospital.setPreferredSize(new java.awt.Dimension(240, 59));
+        btnCreateHospital.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateHospitalActionPerformed(evt);
+            }
+        });
+
+        btnAddDiagnosisInfo.setText("Add Diagnosis Information");
+        btnAddDiagnosisInfo.setPreferredSize(new java.awt.Dimension(240, 59));
+        btnAddDiagnosisInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddDiagnosisInfoActionPerformed(evt);
+            }
+        });
+
+        btnAddHistory.setText("Full History of the patient");
+        btnAddHistory.setPreferredSize(new java.awt.Dimension(240, 59));
+        btnAddHistory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddHistoryActionPerformed(evt);
+            }
+        });
+
+        btnCreateHospital1.setText("Create Doctor");
+        btnCreateHospital1.setPreferredSize(new java.awt.Dimension(240, 59));
+        btnCreateHospital1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateHospital1ActionPerformed(evt);
+            }
+        });
+
+        btnAddPatient.setText("Add New Patient Record");
+        btnAddPatient.setPreferredSize(new java.awt.Dimension(240, 59));
+        btnAddPatient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddPatientActionPerformed(evt);
             }
         });
 
@@ -64,7 +112,22 @@ public class HospitalAdmin extends javax.swing.JFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnCreateHospital, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnAddHistory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnCreateHospital1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnAddPatient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnAddDiagnosisInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(1064, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -72,7 +135,17 @@ public class HospitalAdmin extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 643, Short.MAX_VALUE)
+                .addGap(69, 69, 69)
+                .addComponent(btnCreateHospital, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnCreateHospital1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnAddPatient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnAddDiagnosisInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnAddHistory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 219, Short.MAX_VALUE)
                 .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15))
         );
@@ -89,6 +162,33 @@ public class HospitalAdmin extends javax.swing.JFrame {
             new Login(lgnList,patientList,city ).setVisible(true);
         }
     }//GEN-LAST:event_btnLogOutActionPerformed
+
+    private void btnCreateHospitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateHospitalActionPerformed
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_btnCreateHospitalActionPerformed
+
+    private void btnAddDiagnosisInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDiagnosisInfoActionPerformed
+        // TODO add your handling code here:
+        new AddDiagnosisInformation(patientList,city).setVisible(true);
+        System.out.println(patientList.toString());
+        System.out.println(city.toString());
+    }//GEN-LAST:event_btnAddDiagnosisInfoActionPerformed
+
+    private void btnAddHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddHistoryActionPerformed
+        // TODO add your handling code here:
+        new HistoryPatient(patientList,city).setVisible(true);
+    }//GEN-LAST:event_btnAddHistoryActionPerformed
+
+    private void btnCreateHospital1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateHospital1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCreateHospital1ActionPerformed
+
+    private void btnAddPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddPatientActionPerformed
+        // TODO add your handling code here:
+        new AddNewPatientRecord(patientList,city).setVisible(true);
+
+    }//GEN-LAST:event_btnAddPatientActionPerformed
 
     /**
      * @param args the command line arguments
@@ -126,6 +226,11 @@ public class HospitalAdmin extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAddDiagnosisInfo;
+    private javax.swing.JButton btnAddHistory;
+    private javax.swing.JButton btnAddPatient;
+    private javax.swing.JButton btnCreateHospital;
+    private javax.swing.JButton btnCreateHospital1;
     private javax.swing.JButton btnLogOut;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables

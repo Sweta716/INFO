@@ -4,6 +4,7 @@
  */
 package secondAssignment.system.ui;
 
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import secondAssignment.system.model.login.Credentials;
 import secondAssignment.system.model.login.LoginList;
@@ -143,6 +144,43 @@ public class AddLogin extends javax.swing.JFrame {
         setVisible(false);
     }//GEN-LAST:event_btnCloseActionPerformed
 
+    public static boolean addLoginPageclientSideValidation(javax.swing.JFrame frame, String name, String password, String role, String userName) {
+        if (Pattern.compile("^[a-zA-Z\\s]*$").matcher(role).matches() && !role.equals("")) {
+            System.out.println("Role is valid.");
+            if (Pattern.compile("^[a-zA-Z\\s]*$").matcher(userName).matches() && !userName.equals("")) {
+                System.out.println("Username is valid.");
+                /*A password is considered valid if all the following constraints are satisfied:
+                        It contains at least 8 characters and at most 20 characters.
+                        It contains at least one digit.
+                        It contains at least one upper case alphabet.
+                        It contains at least one lower case alphabet.
+                        It contains at least one special character which includes !@#$%&*()-+=^.
+                    It doesn’t contain any white space.*/
+                if (
+//                        Pattern.compile("^(?=.*[0-9])"
+//                        + "(?=.[a-z])(?=.[A-Z])"
+//                        + "(?=.*[@#$%^&+=])"
+//                        + "(?=\\S+$).{8,20}$").matcher(password).matches() && 
+                        !password.equals("")) {
+                    System.out.println("Password is valid.");
+                    if (Pattern.compile("^[a-zA-Z\\s]*$").matcher(name).matches() && !name.equals("")) {
+                        System.out.println("Name is valid.");
+                    } else {
+                        JOptionPane.showMessageDialog(frame, "Name field is not valid", "Alert", JOptionPane.WARNING_MESSAGE);
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(frame, "Password field is not in specified format", "Alert", JOptionPane.WARNING_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(frame, "Username field is not valid", "Alert", JOptionPane.WARNING_MESSAGE);
+
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(frame, "Role is not valid", "Alert", JOptionPane.WARNING_MESSAGE);
+        }
+        return true;
+    }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         try {
@@ -150,18 +188,21 @@ public class AddLogin extends javax.swing.JFrame {
             String password = txtPassWord.getText();
             String role = txtRole.getText();
             String userName = txtUserName.getText();
+            boolean passed = addLoginPageclientSideValidation(this, name, password, role, userName);
+            if (passed) {
+                Credentials lgn = loginList.addlogin();
+                lgn.setName(name);
+                lgn.setRole(role);
+                lgn.setUserName(userName);
+                lgn.setPassWord(password);
+                txtName.setText("");
+                txtPassWord.setText("");
+                txtRole.setText("");
+                txtUserName.setText("");
 
-            Credentials lgn = loginList.addlogin();
-            lgn.setName(name);
-            lgn.setRole(role);
-            lgn.setUserName(userName);
-            lgn.setPassWord(password);
-            txtName.setText("");
-            txtPassWord.setText("");
-            txtRole.setText("");
-            txtUserName.setText("");
+                JOptionPane.showMessageDialog(this, "New login Created");
 
-            JOptionPane.showMessageDialog(this, "New login Created");
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Error");
         }

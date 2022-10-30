@@ -6,6 +6,7 @@ package secondAssignment.system.ui;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import secondAssignment.system.person.City;
 import secondAssignment.system.person.Community;
@@ -25,12 +26,13 @@ public class AddNewPatientRecord extends javax.swing.JFrame {
     /**
      * Creates new form AddNewPatientRecord
      */
-     City city;
-     PatientDirectory plist;
-    public AddNewPatientRecord(PatientDirectory plist,City city) {
+    City city;
+    PatientDirectory plist;
+
+    public AddNewPatientRecord(PatientDirectory plist, City city) {
         initComponents();
         this.plist = plist;
-        this.city=city;
+        this.city = city;
     }
 
     /**
@@ -273,54 +275,135 @@ public class AddNewPatientRecord extends javax.swing.JFrame {
         setVisible(false);
     }//GEN-LAST:event_btnCloseActionPerformed
 
+//    public static boolean addPatientInformationclientSideValidation(javax.swing.JFrame frame, String patientID, String name, String age, String community, String address, String email) {
+//        if (Pattern.compile("^[1-9]\\d*$").matcher(patientID).matches() && !patientID.equals("")) {
+//            System.out.println("Patient ID is valid.");
+//            if (Pattern.compile("^[a-zA-Z\\s]*$").matcher(name).matches() && !name.equals("")) {
+//                System.out.println("Name is valid.");
+//                if (Pattern.compile("^[1-9]\\d*$").matcher(age).matches() && !age.equals("")) {
+//                    System.out.println("Age is valid.");
+//                    if (Pattern.compile("^[a-zA-Z\\s]*$").matcher(community).matches() && !community.equals("")) {
+//                        System.out.println("Community is valid.");
+//                        if (Pattern.compile("^[a-zA-Z\\s]*$").matcher(address).matches() && !address.equals("")) {
+//                            System.out.println("Address is valid.");
+//                            if (Pattern.compile("^[a-zA-Z0-9_+&-]+(?:\\.[a-zA-Z0-9_+&-]+)*"
+//                                    + "@" + "(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$").matcher(email).matches() && !email.equals("")) {
+//                                System.out.println("Email ID is valid.");
+//                            } else {
+//                                JOptionPane.showMessageDialog(frame, "Email ID is not valid", "Alert", JOptionPane.WARNING_MESSAGE);
+//
+//                            }
+//                        } else {
+//                            JOptionPane.showMessageDialog(frame, "Address is not valid", "Alert", JOptionPane.WARNING_MESSAGE);
+//                        }
+//                    } else {
+//                        JOptionPane.showMessageDialog(frame, "Community is not valid", "Alert", JOptionPane.WARNING_MESSAGE);
+//                    }
+//
+//                } else {
+//                    JOptionPane.showMessageDialog(frame, "Age is not in specified format", "Alert", JOptionPane.WARNING_MESSAGE);
+//                }
+//            } else {
+//                JOptionPane.showMessageDialog(frame, "Name field is not valid", "Alert", JOptionPane.WARNING_MESSAGE);
+//            }
+//        } else {
+//            JOptionPane.showMessageDialog(frame, "Patient ID is not valid", "Alert", JOptionPane.WARNING_MESSAGE);
+//        }
+//        return true;
+//    }
+//
+//    public static boolean addPatientVitalSignsclientSideValidation(javax.swing.JFrame frame, String bp, String pulse, String bt, String respiration, String weight) {
+//        if (Pattern.compile("^[1-9]\\d*$").matcher(bp).matches() && !bp.equals("")) {
+//            System.out.println("BP is valid.");
+//            if (Pattern.compile("^[1-9]\\d*$").matcher(pulse).matches() && !pulse.equals("")) {
+//                System.out.println("Pulse is valid.");
+//                if (Pattern.compile("^[1-9]\\d*$").matcher(bt).matches() && !bt.equals("")) {
+//                    System.out.println("BT is valid.");
+//                    if (Pattern.compile("^[1-9]\\d*$").matcher(respiration).matches() && !respiration.equals("")) {
+//                        System.out.println("Respiration is valid.");
+//                        if (Pattern.compile("^[1-9]\\d*$").matcher(weight).matches() && !weight.equals("")) {
+//                            System.out.println("Weight is valid.");
+//
+//                        } else {
+//                            JOptionPane.showMessageDialog(frame, "Weight is not valid", "Alert", JOptionPane.WARNING_MESSAGE);
+//                        }
+//                    } else {
+//                        JOptionPane.showMessageDialog(frame, "Respiration is not valid", "Alert", JOptionPane.WARNING_MESSAGE);
+//                    }
+//
+//                } else {
+//                    JOptionPane.showMessageDialog(frame, "BT is not in specified format", "Alert", JOptionPane.WARNING_MESSAGE);
+//                }
+//            } else {
+//                JOptionPane.showMessageDialog(frame, "Pulse field is not valid", "Alert", JOptionPane.WARNING_MESSAGE);
+//            }
+//        } else {
+//            JOptionPane.showMessageDialog(frame, "BP is not valid", "Alert", JOptionPane.WARNING_MESSAGE);
+//        }
+//        return true;
+//    }
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
-        if(!validateInput()){
-          JOptionPane.showMessageDialog(this,"Enter valid details.");
-      }
-         String name = txtName.getText();
-      Integer id = Integer.parseInt(txtPatientID.getText());
-      Integer age = Integer.parseInt(txtage.getText());
-      String email = txtEmailID.getText();
-      String residence = txtAddress.getText();
-      String community = txtCommunity.getText();
-      Community c1=city.getCommunity(community);
-       House house=new House(residence);
-      if(c1.getCommunityName()!=null)
-      {
-          c1.addHouse(house);
-          System.out.println("Old community found:"+c1.getCommunityName());
-      }
-      else
-      {
-           c1.setCommunityName(community);
-          c1.addHouse(house);
-          city.addCommunity(c1);
-          
-            System.out.println("New community added:"+c1.getCommunityName());
-            
-      }
-      
-      
-      Integer bp = Integer.parseInt(txtBloodpressure.getText());
-      Integer pulse = Integer.parseInt(txtHeartRate.getText());
-      Integer bt = Integer.parseInt(txtTemperature.getText());
-      Integer respiration = Integer.parseInt(txtResperatory.getText());
-      Integer weight= Integer.parseInt(txtweight.getText());
-      
-      String timestamp = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss").format(Calendar.getInstance().getTime());
-      
-      EncounterHistory encounterHistory = new EncounterHistory();
-      VitalSigns vitalSigns = new VitalSigns( pulse,bp,weight,respiration,bt);
-      Encounter  encounter = new Encounter(vitalSigns,timestamp );
-      encounterHistory.addNewEncounter(encounter);
-      Patient pat=new Patient(encounterHistory,name,id,age,email,city,house,c1);
-      plist.addPatient(pat);
-    
-      
-      JOptionPane.showMessageDialog(this,"New Patient added.");
-      setVisible(false);
-      new AddNewPatientRecord( plist, city).setVisible(true);
+
+//        if (!validateInput()) {
+//            JOptionPane.showMessageDialog(this, "Enter valid details.");
+//        }
+        String name = txtName.getText();
+        String id = txtPatientID.getText();
+        String age = txtage.getText();
+        String email = txtEmailID.getText();
+        String residence = txtAddress.getText();
+        String community = txtCommunity.getText();
+
+       Community c1 = city.getCommunity(community);
+        House house = new House(residence);
+        if (c1.getCommunityName() != null) {
+            c1.addHouse(house);
+            System.out.println("Old community found:" + c1.getCommunityName());
+        } else {
+            c1.setCommunityName(community);
+            c1.addHouse(house);
+            city.addCommunity(c1);
+
+            System.out.println("New community added:" + c1.getCommunityName());
+
+        }
+    //    boolean passed = addPatientInformationclientSideValidation(this, id, name, age, community, residence, email);
+      //  if(passed){
+        int patientid = Integer.parseInt(id);
+        int patientAge = Integer.parseInt(age);
+
+        String bp = txtBloodpressure.getText();
+        String pulse = txtHeartRate.getText();
+        String bt = txtTemperature.getText();
+        String respiration = txtResperatory.getText();
+        String weight = txtweight.getText();
+        
+//      Integer bp = Integer.parseInt(txtBloodpressure.getText());
+//      Integer pulse = Integer.parseInt(txtHeartRate.getText());
+//      Integer bt = Integer.parseInt(txtTemperature.getText());
+//      Integer respiration = Integer.parseInt(txtResperatory.getText());
+//      Integer weight= Integer.parseInt(txtweight.getText());
+       // boolean passed1 = addPatientVitalSignsclientSideValidation(this, bp, pulse, bt, respiration, weight);
+       
+        Double bp1 = Double.parseDouble(bp);
+        Double pulse1 = Double.parseDouble(pulse);
+        Double bt1 = Double.parseDouble(bt);
+        Double respiration1 = Double.parseDouble(respiration);
+        Double weight1 = Double.parseDouble(weight);
+       //  if(passed1){
+        String timestamp = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss").format(Calendar.getInstance().getTime());
+
+        EncounterHistory encounterHistory = new EncounterHistory();
+        VitalSigns vitalSigns = new VitalSigns(pulse1, bp1, weight1, respiration1, bt1);
+        Encounter encounter = new Encounter(vitalSigns, timestamp);
+        encounterHistory.addNewEncounter(encounter);
+        Patient pat = new Patient(encounterHistory, name, patientid, patientAge, email, city, house, c1);
+        plist.addPatient(pat);
+
+        JOptionPane.showMessageDialog(this, "New Patient added.");
+        setVisible(false);
+        new AddNewPatientRecord(plist, city).setVisible(true);
 //      txtName.setText("");
 //      txtPatientID.setText("");
 //      txtage.setText("");
@@ -349,22 +432,22 @@ public class AddNewPatientRecord extends javax.swing.JFrame {
 //            JOptionPane.showMessageDialog(null, "Please enter correct data");
 //            
 //        }
-
-
+  //       }
+  //      }
     }//GEN-LAST:event_btnSaveActionPerformed
 
-    private boolean validateInput(){
-        if(txtName.getText().isEmpty()||txtPatientID.getText().isEmpty()||txtage.getText().isEmpty()
-                ||txtEmailID.getText().isEmpty()||txtAddress.getText().isEmpty()||txtCommunity.getText().isEmpty()
-                ||txtCity.getText().isEmpty()||txtBloodpressure.getText().isEmpty()||txtHeartRate.getText().isEmpty()||txtTemperature.getText().isEmpty()
-                ||txtResperatory.getText().isEmpty()||txtweight.getText().isEmpty()){
-            return false;
-            
-        }
-        return true;    
-    }
-    
-    
+//    private boolean validateInput() {
+//        if (txtName.getText().isEmpty() || txtPatientID.getText().isEmpty() || txtage.getText().isEmpty()
+//                || txtEmailID.getText().isEmpty() || txtAddress.getText().isEmpty() || txtCommunity.getText().isEmpty()
+//                || txtCity.getText().isEmpty() || txtBloodpressure.getText().isEmpty() || txtHeartRate.getText().isEmpty() || txtTemperature.getText().isEmpty()
+//                || txtResperatory.getText().isEmpty() || txtweight.getText().isEmpty()) {
+//            return false;
+//
+//        }
+//        return true;
+//    }
+
+
     private void txtAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAddressActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAddressActionPerformed

@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 public class City {
          String city;
-       private ArrayList<Community> communityList;
+       private ArrayList<Community> communityList = new ArrayList<>() ;
        
         public City(){
         communityList = new ArrayList<>();

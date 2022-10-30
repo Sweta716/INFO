@@ -5,6 +5,7 @@
 package secondAssignment.system.ui;
 
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import secondAssignment.system.model.login.Credentials;
 import secondAssignment.system.model.login.LoginList;
@@ -138,13 +139,34 @@ public class Login extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_btnCloseActionPerformed
-
+public static boolean loginPageclientSideValidation(javax.swing.JFrame frame, String userName, String passWord){
+      if(Pattern.compile("^[a-zA-Z\\s]*$").matcher(userName).matches() && !userName.equals("")){
+        System.out.println("User name is valid.");
+         if(
+                 //Pattern.compile("^[a-zA-Z\\s]*$").matcher(passWord).matches() && 
+                 !passWord.equals("")){
+           System.out.println("Password is valid.");
+           return true;
+         }
+         else
+         {
+            JOptionPane.showMessageDialog(frame, "Password field is empty", "Alert", JOptionPane.WARNING_MESSAGE);
+         }
+      }
+      else
+      {
+        JOptionPane.showMessageDialog(frame, "User Name is not valid.\nOnly characters and spaces are allowed.", "Alert", JOptionPane.WARNING_MESSAGE);
+      }
+      return true;
+    }
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
         String userName = txtUserName.getText();
         String passWord = pwdPassword.getText();
+        boolean passed = loginPageclientSideValidation(this,userName,passWord);
+       
         ArrayList<Credentials> emp = new ArrayList<Credentials>();
-
+          if(passed){
         for (Credentials cred : lgnList.getLoginList()) {
             //for (int i = 0; i < lgnList.getLoginList().size(); i++) {
             String userNm = (cred.getUserName());
@@ -182,6 +204,7 @@ public class Login extends javax.swing.JFrame {
 
             }
         }
+          }
 
     }//GEN-LAST:event_btnLoginActionPerformed
 
