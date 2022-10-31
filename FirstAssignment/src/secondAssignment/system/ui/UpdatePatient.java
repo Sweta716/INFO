@@ -4,9 +4,11 @@
  */
 package secondAssignment.system.ui;
 
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import secondAssignment.system.person.City;
+import secondAssignment.system.person.DoctorDirectory;
 import secondAssignment.system.person.Encounter;
 import secondAssignment.system.person.Patient;
 import secondAssignment.system.person.PatientDirectory;
@@ -22,11 +24,13 @@ public class UpdatePatient extends javax.swing.JFrame {
      */
     PatientDirectory pList;
     City city;
+    DoctorDirectory plist;
 
-    public UpdatePatient(PatientDirectory pList, City city) {
+    public UpdatePatient(PatientDirectory pList, City city,DoctorDirectory plist) {
         initComponents();
         this.pList = pList;
         this.city = city;
+        this.plist = plist;
     }
 
     /**
@@ -207,27 +211,68 @@ public class UpdatePatient extends javax.swing.JFrame {
         setVisible(false);
     }//GEN-LAST:event_btnCloesActionPerformed
 
+            public static boolean updatePatientclientSideValidation(javax.swing.JFrame frame, String name, String age, String email, String houseno) {
+        if (Pattern.compile("^[a-zA-Z\\s]*$").matcher(name).matches() && !name.equals("")) {
+            System.out.println("Name is valid.");
+            if (Pattern.compile("^[1-9]\\d*$").matcher(age).matches() && !age.equals("")) {
+                System.out.println("Age is valid.");
+               
+                if (Pattern.compile("^[a-zA-Z0-9_+&-]+(?:\\.[a-zA-Z0-9_+&-]+)*"
+                                    + "@" + "(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$").matcher(email).matches() && !email.equals("")) {
+                    System.out.println("Email is valid.");
+                    if (Pattern.compile("^[1-9]\\d*$").matcher(houseno).matches() && !houseno.equals("")) {
+                        System.out.println("HouseNo is valid.");
+                        return true;
+                    } else {
+                        JOptionPane.showMessageDialog(frame, "House No field is not valid.\\nOnly numbers are allowed.", "Alert", JOptionPane.WARNING_MESSAGE);
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(frame, "Email field is not in specified format", "Alert", JOptionPane.WARNING_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(frame, "Age field is not valid.\\nOnly numbers are allowed.", "Alert", JOptionPane.WARNING_MESSAGE);
+
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(frame, "Name field is not valid.\\nOnly characters and spaces are allowed.", "Alert", JOptionPane.WARNING_MESSAGE);
+        }
+        return false;
+    }
+
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
 
+        String name=txtName.getText();
+        String age = txtAge.getText();
+        String email= txtEmail.getText();
+        String houseNo=txtHouse.getText();
+        boolean passed = updatePatientclientSideValidation(this,name,age,email,houseNo);
+        
+        if(passed){
+        
         Integer iD = Integer.parseInt(txtPatientID.getText());
+        Integer age1= Integer.parseInt(age);
         for (int i = 0; i < pList.getPatientList().size(); i++) {
             int patientid = (pList.getPatientList().get(i).getPatientID());
             if (iD == patientid) {
                 pList.getPatientList().get(i).setName(txtName.getText());
-                pList.getPatientList().get(i).setAge(Integer.parseInt(txtAge.getText()));
+                pList.getPatientList().get(i).setAge(age1);
                 pList.getPatientList().get(i).setEmail(txtEmail.getText());
-                pList.getPatientList().get(i).getHouse().setHouseNumber(txtHouse.getText());
+                pList.getPatientList().get(i).getHouse().setHouseNumber(houseNo);
                 //TODO other details
 
             }
         }
         populateTable();
+    }
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
         // TODO add your handling code here:
-        Integer iD = Integer.parseInt(txtPatientID.getText());
+        String id = txtPatientID.getText();
+            if (Pattern.compile("^[1-9]\\d*$").matcher(id).matches() && !id.equals("")) {
+        Integer iD = Integer.parseInt(id);
         for (int i = 0; i < pList.getPatientList().size(); i++) {
             int patientid = (pList.getPatientList().get(i).getPatientID());
             if (iD == patientid) {
@@ -239,6 +284,11 @@ public class UpdatePatient extends javax.swing.JFrame {
                 //TODO other details
             }
         }
+       }
+            else{
+                JOptionPane.showMessageDialog(this, "Patient ID field is not valid. Only numbers are allowed.", "Alert", JOptionPane.WARNING_MESSAGE);
+
+            }
     }//GEN-LAST:event_btnEditActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed

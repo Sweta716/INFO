@@ -7,6 +7,7 @@ package secondAssignment.system.ui;
 import javax.swing.JOptionPane;
 import secondAssignment.system.model.login.LoginList;
 import secondAssignment.system.person.City;
+import secondAssignment.system.person.DoctorDirectory;
 import secondAssignment.system.person.PatientDirectory;
 
 /**
@@ -22,11 +23,13 @@ public class Home extends javax.swing.JFrame {
      */
     PatientDirectory patientList;
     City city;
+    DoctorDirectory plist;
     public Home(LoginList loginlist) {
         initComponents();
         this.lgnList = loginlist;
         patientList = new PatientDirectory();
         city =new City();
+        plist = new DoctorDirectory();
     }
        
 
@@ -175,7 +178,7 @@ public class Home extends javax.swing.JFrame {
             setVisible(false);
 
            // new Login( lgnList).setVisible(true);
-           new Login( lgnList,patientList,city).setVisible(true);
+           new Login( lgnList,patientList,city,plist).setVisible(true);
         }
     }//GEN-LAST:event_btnLogOutActionPerformed
 
@@ -208,23 +211,23 @@ public class Home extends javax.swing.JFrame {
 
     private void btnAddPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddPatientActionPerformed
         // TODO add your handling code here:
-        new AddNewPatientRecord(patientList,city).setVisible(true);
+        new AddNewPatientRecord(patientList,city, plist).setVisible(true);
         
     }//GEN-LAST:event_btnAddPatientActionPerformed
 
     private void btnAddDiagnosisInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDiagnosisInfoActionPerformed
         // TODO add your handling code here:
-        new AddDiagnosisInformation(patientList,city).setVisible(true);
+        new AddDiagnosisInformation(patientList,city,plist).setVisible(true);
     }//GEN-LAST:event_btnAddDiagnosisInfoActionPerformed
 
     private void btnAddHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddHistoryActionPerformed
         // TODO add your handling code here:
-        new HistoryPatient(patientList,city).setVisible(true);
+        new HistoryPatient(patientList,city,plist).setVisible(true);
     }//GEN-LAST:event_btnAddHistoryActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
-        new UpdatePatient(patientList,city).setVisible(true);
+        new UpdatePatient(patientList,city,plist).setVisible(true);
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnHospitalInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHospitalInfoActionPerformed
@@ -239,7 +242,7 @@ public class Home extends javax.swing.JFrame {
 
     private void btnAbnormalityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAbnormalityActionPerformed
         // TODO add your handling code here:
-        new ViewAbnormality( patientList,  city).setVisible(true);
+        new ViewAbnormality( patientList,  city,plist).setVisible(true);
     }//GEN-LAST:event_btnAbnormalityActionPerformed
 
     /**
