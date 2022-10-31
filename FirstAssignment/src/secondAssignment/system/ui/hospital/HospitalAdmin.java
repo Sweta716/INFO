@@ -46,7 +46,6 @@ public class HospitalAdmin extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         btnLogOut = new javax.swing.JButton();
-        btnCreateHospital = new javax.swing.JButton();
         btnAddDiagnosisInfo = new javax.swing.JButton();
         btnAddHistory = new javax.swing.JButton();
         btnCreateHospital1 = new javax.swing.JButton();
@@ -67,15 +66,6 @@ public class HospitalAdmin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 694, 182, -1));
-
-        btnCreateHospital.setText("Create Hospital");
-        btnCreateHospital.setPreferredSize(new java.awt.Dimension(240, 59));
-        btnCreateHospital.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCreateHospitalActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnCreateHospital, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 120, -1, -1));
 
         btnAddDiagnosisInfo.setText("Add Diagnosis Information");
         btnAddDiagnosisInfo.setPreferredSize(new java.awt.Dimension(240, 59));
@@ -129,11 +119,6 @@ public class HospitalAdmin extends javax.swing.JFrame {
             new Login(lgnList,patientList,city,doctorList ).setVisible(true);
         }
     }//GEN-LAST:event_btnLogOutActionPerformed
-
-    private void btnCreateHospitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateHospitalActionPerformed
-        // TODO add your handling code here:
-       
-    }//GEN-LAST:event_btnCreateHospitalActionPerformed
 
     private void btnAddDiagnosisInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDiagnosisInfoActionPerformed
         // TODO add your handling code here:
@@ -197,7 +182,6 @@ public class HospitalAdmin extends javax.swing.JFrame {
     private javax.swing.JButton btnAddDiagnosisInfo;
     private javax.swing.JButton btnAddHistory;
     private javax.swing.JButton btnAddPatient;
-    private javax.swing.JButton btnCreateHospital;
     private javax.swing.JButton btnCreateHospital1;
     private javax.swing.JButton btnLogOut;
     private javax.swing.JLabel jLabel1;
