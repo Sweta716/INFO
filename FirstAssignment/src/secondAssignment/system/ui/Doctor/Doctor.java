@@ -48,10 +48,13 @@ public class Doctor extends javax.swing.JFrame {
         btnLogOut = new javax.swing.JButton();
         btnAddDiagnosisInfo = new javax.swing.JButton();
         btnAddHistory = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Doctor");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, 181, -1));
 
         btnLogOut.setText("Log Out");
         btnLogOut.setPreferredSize(new java.awt.Dimension(240, 59));
@@ -60,6 +63,7 @@ public class Doctor extends javax.swing.JFrame {
                 btnLogOutActionPerformed(evt);
             }
         });
+        getContentPane().add(btnLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 672, 182, -1));
 
         btnAddDiagnosisInfo.setText("Add Diagnosis Information");
         btnAddDiagnosisInfo.setPreferredSize(new java.awt.Dimension(240, 59));
@@ -68,6 +72,7 @@ public class Doctor extends javax.swing.JFrame {
                 btnAddDiagnosisInfoActionPerformed(evt);
             }
         });
+        getContentPane().add(btnAddDiagnosisInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 87, -1, -1));
 
         btnAddHistory.setText("Full History of the patient");
         btnAddHistory.setPreferredSize(new java.awt.Dimension(240, 59));
@@ -76,37 +81,11 @@ public class Doctor extends javax.swing.JFrame {
                 btnAddHistoryActionPerformed(evt);
             }
         });
+        getContentPane().add(btnAddHistory, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 164, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(btnAddDiagnosisInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnAddHistory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(1079, 1079, 1079))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(65, 65, 65)
-                .addComponent(btnAddDiagnosisInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnAddHistory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 449, Short.MAX_VALUE)
-                .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/secondAssignment/system/ui/bb.jpeg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1320, 750));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -173,5 +152,6 @@ public class Doctor extends javax.swing.JFrame {
     private javax.swing.JButton btnAddHistory;
     private javax.swing.JButton btnLogOut;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

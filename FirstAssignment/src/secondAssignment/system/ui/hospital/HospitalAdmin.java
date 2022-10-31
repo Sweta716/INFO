@@ -51,10 +51,13 @@ public class HospitalAdmin extends javax.swing.JFrame {
         btnAddHistory = new javax.swing.JButton();
         btnCreateHospital1 = new javax.swing.JButton();
         btnAddPatient = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Hospital Admin");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 35, 238, -1));
 
         btnLogOut.setText("Log Out");
         btnLogOut.setPreferredSize(new java.awt.Dimension(240, 59));
@@ -63,6 +66,7 @@ public class HospitalAdmin extends javax.swing.JFrame {
                 btnLogOutActionPerformed(evt);
             }
         });
+        getContentPane().add(btnLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 694, 182, -1));
 
         btnCreateHospital.setText("Create Hospital");
         btnCreateHospital.setPreferredSize(new java.awt.Dimension(240, 59));
@@ -71,6 +75,7 @@ public class HospitalAdmin extends javax.swing.JFrame {
                 btnCreateHospitalActionPerformed(evt);
             }
         });
+        getContentPane().add(btnCreateHospital, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 120, -1, -1));
 
         btnAddDiagnosisInfo.setText("Add Diagnosis Information");
         btnAddDiagnosisInfo.setPreferredSize(new java.awt.Dimension(240, 59));
@@ -79,6 +84,7 @@ public class HospitalAdmin extends javax.swing.JFrame {
                 btnAddDiagnosisInfoActionPerformed(evt);
             }
         });
+        getContentPane().add(btnAddDiagnosisInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 339, -1, -1));
 
         btnAddHistory.setText("Full History of the patient");
         btnAddHistory.setPreferredSize(new java.awt.Dimension(240, 59));
@@ -87,6 +93,7 @@ public class HospitalAdmin extends javax.swing.JFrame {
                 btnAddHistoryActionPerformed(evt);
             }
         });
+        getContentPane().add(btnAddHistory, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 416, -1, -1));
 
         btnCreateHospital1.setText("Create Doctor");
         btnCreateHospital1.setPreferredSize(new java.awt.Dimension(240, 59));
@@ -95,6 +102,7 @@ public class HospitalAdmin extends javax.swing.JFrame {
                 btnCreateHospital1ActionPerformed(evt);
             }
         });
+        getContentPane().add(btnCreateHospital1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 197, -1, -1));
 
         btnAddPatient.setText("Add New Patient Record");
         btnAddPatient.setPreferredSize(new java.awt.Dimension(240, 59));
@@ -103,55 +111,11 @@ public class HospitalAdmin extends javax.swing.JFrame {
                 btnAddPatientActionPerformed(evt);
             }
         });
+        getContentPane().add(btnAddPatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 268, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnCreateHospital, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnAddHistory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnCreateHospital1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnAddPatient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnAddDiagnosisInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(1064, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(jLabel1)
-                .addGap(69, 69, 69)
-                .addComponent(btnCreateHospital, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnCreateHospital1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnAddPatient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnAddDiagnosisInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnAddHistory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 219, Short.MAX_VALUE)
-                .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/secondAssignment/system/ui/hospital/aa.jpeg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1330, 770));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -237,5 +201,6 @@ public class HospitalAdmin extends javax.swing.JFrame {
     private javax.swing.JButton btnCreateHospital1;
     private javax.swing.JButton btnLogOut;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

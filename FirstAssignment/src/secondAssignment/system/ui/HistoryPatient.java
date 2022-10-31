@@ -49,6 +49,7 @@ public class HistoryPatient extends javax.swing.JFrame {
         btnViewHis = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblHistory = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(280, 150));
@@ -58,6 +59,7 @@ public class HistoryPatient extends javax.swing.JFrame {
                 formComponentShown(evt);
             }
         });
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton1.setText("Close");
@@ -66,8 +68,11 @@ public class HistoryPatient extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(651, 471, -1, -1));
+        getContentPane().add(txtPatientID, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 33, 100, -1));
 
         jLabel1.setText("Patient ID");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 33, 78, 22));
 
         btnViewHis.setBackground(new java.awt.Color(242, 242, 242));
         btnViewHis.setText("View History");
@@ -76,6 +81,7 @@ public class HistoryPatient extends javax.swing.JFrame {
                 btnViewHisActionPerformed(evt);
             }
         });
+        getContentPane().add(btnViewHis, new org.netbeans.lib.awtextra.AbsoluteConstraints(411, 33, -1, -1));
 
         tblHistory.setBackground(new java.awt.Color(242, 242, 242));
         tblHistory.setModel(new javax.swing.table.DefaultTableModel(
@@ -99,38 +105,11 @@ public class HistoryPatient extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblHistory);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(66, 66, 66)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addComponent(txtPatientID, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(128, 128, 128)
-                .addComponent(btnViewHis)
-                .addContainerGap(243, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(33, 33, 33))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtPatientID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnViewHis))
-                .addGap(152, 152, 152)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(83, 83, 83)
-                .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 207, 750, 181));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/secondAssignment/system/ui/aa.jpeg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -259,6 +238,7 @@ public class HistoryPatient extends javax.swing.JFrame {
     private javax.swing.JButton btnViewHis;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblHistory;
     private javax.swing.JTextField txtPatientID;

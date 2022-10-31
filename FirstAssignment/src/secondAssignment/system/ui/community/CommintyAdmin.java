@@ -54,10 +54,13 @@ public class CommintyAdmin extends javax.swing.JFrame {
         btnLogOut = new javax.swing.JButton();
         btnAbnormality = new javax.swing.JButton();
         AddCity = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Community Admin");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 22, 116, -1));
 
         btnLogOut.setText("Log Out");
         btnLogOut.setPreferredSize(new java.awt.Dimension(240, 59));
@@ -66,6 +69,7 @@ public class CommintyAdmin extends javax.swing.JFrame {
                 btnLogOutActionPerformed(evt);
             }
         });
+        getContentPane().add(btnLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 690, 182, -1));
 
         btnAbnormality.setText("View Abnormality in Community");
         btnAbnormality.addActionListener(new java.awt.event.ActionListener() {
@@ -73,6 +77,7 @@ public class CommintyAdmin extends javax.swing.JFrame {
                 btnAbnormalityActionPerformed(evt);
             }
         });
+        getContentPane().add(btnAbnormality, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 251, 227, 54));
 
         AddCity.setText("Add City,Community,House");
         AddCity.addActionListener(new java.awt.event.ActionListener() {
@@ -80,40 +85,11 @@ public class CommintyAdmin extends javax.swing.JFrame {
                 AddCityActionPerformed(evt);
             }
         });
+        getContentPane().add(AddCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 179, 227, 54));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnAbnormality, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(AddCity, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(1100, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jLabel1)
-                .addGap(141, 141, 141)
-                .addComponent(AddCity, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnAbnormality, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 392, Short.MAX_VALUE)
-                .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/secondAssignment/system/ui/community/aa (2).jpeg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1330, 770));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -178,5 +154,6 @@ public class CommintyAdmin extends javax.swing.JFrame {
     private javax.swing.JButton btnAbnormality;
     private javax.swing.JButton btnLogOut;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
